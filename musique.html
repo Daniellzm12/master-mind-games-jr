@@ -1,1 +1,463 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>MUSIQUE 🎧</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+        }
+            .container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+ 
+        h1{
+            font-family: Georgia, serif;
+            color: black;
+        }
 
+        input[type="text"] {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-color: black;
+            border-radius: 10px 10px;
+            background-color: white;
+            color: black;
+            font-family: Georgia,serif;
+        }
+        
+        button {
+            padding: 15px;
+            margin: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius:8px 8px;
+            cursor: pointer;
+            font-family: Georgia,serif;
+            width: 50%;
+            
+        }
+        button:hover{
+            background-color: cyan;
+            color: white;
+        }
+        button:active{
+            background-color: blue;
+        }
+.resultat {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .indice {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-family: Georgia, serif;
+        }
+        .p ,p{
+            font-family: Georgia,serif;
+            font-size: 1.2em;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+   <h1>Musique 🎧</h1>   
+   <i><p id="musique"></p></i>
+   <input type="text" placeholder="Votre reponse joueur" id="reponse">
+   <button onclick="Musique()">Réponse </button>
+   <p id="score" class="p">Points : 0</p>
+   <p id="commentaire" ></p>
+  </div>
+  <script>
+      let scoreTotal = 0;
+      let musique = [
+ {
+indice: "Qui est l'artiste féminine la plus écoutée sur Spotify en 2024?",
+personnage: "À déterminer (les classements varient)"
+ },
+ {
+indice: "Quel chanteur est connu pour son album 'Thriller'?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Quel groupe britannique a chanté 'Bohemian Rhapsody'?",
+personnage: "Queen"
+ },
+ {
+indice: "Quel artiste a sorti l'album 'Lemonade' en 2016?",
+personnage: "Beyoncé"
+ },
+ {
+indice: "Quel rappeur est connu pour l'album 'To Pimp a Butterfly'?",
+personnage: "Kendrick Lamar"
+ },
+ {
+indice: "Qui a chanté 'Like a Rolling Stone'?",
+personnage: "Bob Dylan"
+ },
+ {
+indice: "Quel artiste est connu pour ses concerts énergiques et ses tenues extravagantes?",
+personnage: "Harry Styles"
+ },
+ {
+indice: "Quel groupe est connu pour 'Hotel California'?",
+personnage: "The Eagles"
+ },
+ {
+indice: "Qui a chanté 'Respect' et est une légende de la soul?",
+personnage: "Aretha Franklin"
+ },
+ {
+indice: "Quel groupe de K-pop a connu un succès mondial avec 'Dynamite'?",
+personnage: "BTS"
+ },
+ {
+indice: "Qui a chanté 'Imagine' et est un symbole de la paix?",
+personnage: "John Lennon"
+ },
+ {
+indice: "Quel artiste est connu pour son style country-pop et des tubes comme 'Shake It Off'?",
+personnage: "Taylor Swift"
+ },
+ {
+indice: "Quel groupe est connu pour des classiques du rock comme 'Stairway to Heaven'?",
+personnage: "Led Zeppelin"
+ },
+ {
+indice: "Qui a chanté 'Hallelujah' et est un poète-chanteur canadien?",
+personnage: "Leonard Cohen"
+ },
+ {
+indice: "Quel artiste est connu pour son style unique de R&B alternatif et des chansons comme 'Blinding Lights'?",
+personnage: "The Weeknd"
+ },
+ {
+indice: "Quel groupe est connu pour des tubes comme 'Smells Like Teen Spirit' et a marqué le grunge?",
+personnage: "Nirvana"
+ },
+ {
+indice: "Qui a chanté 'Purple Rain' et est une légende de la funk et du rock?",
+personnage: "Prince"
+ },
+ {
+indice: "Quel artiste est connu pour son engagement politique et des chansons comme 'Blowin' in the Wind'?",
+personnage: "Bob Dylan"
+ },
+ {
+indice: "Quel groupe est connu pour des hymnes rock comme 'Livin' on a Prayer'?",
+personnage: "Bon Jovi"
+ },
+ {
+indice: "Qui a chanté 'Someone Like You' et est une chanteuse britannique à la voix puissante?",
+personnage: "Adele"
+ },
+ {
+indice: "Quel artiste domine les charts avec des tubes comme 'Shape of You'?",
+personnage: "Ed Sheeran"
+ },
+ {
+indice: "Quel rappeur est connu pour son flow unique et des albums comme 'The College Dropout'?",
+personnage: "Kanye West"
+ },
+ {
+indice: "Quel groupe de rock est connu pour des hymnes comme 'Sweet Child o' Mine'?",
+personnage: "Guns N' Roses"
+ },
+ {
+indice: "Qui a chanté 'Crazy in Love' et est une icône de la musique pop et du R&B?",
+personnage: "Beyoncé"
+ },
+ {
+indice: "Quel artiste a dominé les charts avec des tubes comme 'Uptown Funk'?",
+personnage: "Bruno Mars"
+ },
+ {
+indice: "Quel groupe britannique a sorti l'album 'Sgt. Pepper's Lonely Hearts Club Band'?",
+personnage: "The Beatles"
+ },
+ {
+indice: "Quel artiste a connu un succès mondial avec l'album '21'?",
+personnage: "Adele"
+ },
+ {
+indice: "Quel rappeur a sorti l'album 'good kid, m.A.A.d city'?",
+personnage: "Kendrick Lamar"
+ },
+ {
+indice: "Quel artiste a popularisé la danse Moonwalk?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Qui est l'artiste derrière le tube planétaire 'Despacito'?",
+personnage: "Luis Fonsi"
+ },
+ {
+indice: "Quel groupe de rock a chanté 'Satisfaction'?",
+personnage: "The Rolling Stones"
+ },
+ {
+indice: "Qui est la 'Material Girl' de la musique pop?",
+personnage: "Madonna"
+ },
+ {
+indice: "Quel rappeur est également connu comme Yeezy?",
+personnage: "Kanye West"
+ },
+ {
+indice: "Qui est l'interprète de 'Wrecking Ball'?",
+personnage: "Miley Cyrus"
+ },
+ {
+indice: "Quel artiste est connu pour ses performances scéniques spectaculaires et son tube 'Born This Way'?",
+personnage: "Lady Gaga"
+ },
+ {
+indice: "Quel chanteur britannique est célèbre pour 'Rocket Man'?",
+personnage: "Elton John"
+ },
+ {
+indice: "Qui est le 'King of Pop'?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Quel artiste est connu pour son tube 'Like a Virgin'?",
+personnage: "Madonna"
+ },
+ {
+indice: "Quel rappeur a sorti l'album 'The Eminem Show'?",
+personnage: "Eminem"
+ },
+ {
+indice: "Quel groupe a chanté 'Wonderwall'?",
+personnage: "Oasis"
+ },
+ {
+indice: "Quel chanteur est célèbre pour le tube 'I Will Always Love You'?",
+personnage: "Whitney Houston"
+ },
+ {
+indice: "Quel artiste a sorti l'album 'Purple Rain'?",
+personnage: "Prince"
+ },
+ {
+indice: "Quel groupe a chanté 'Sweet Child o' Mine'?",
+personnage: "Guns N' Roses"
+ },
+ {
+indice: "Qui a chanté 'Single Ladies (Put a Ring on It)'?",
+personnage: "Beyoncé"
+ },
+ {
+indice: "Quel chanteur a sorti l'album 'Thriller'?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Quel artiste est connu pour son look unique et ses tubes 'Poker Face' et 'Bad Romance'?",
+personnage: "Lady Gaga"
+ },
+ {
+indice: "Quel groupe a chanté 'Hey Jude'?",
+personnage: "The Beatles"
+ },
+ {
+indice: "Qui est l'interprète de 'Bohemian Rhapsody'?",
+personnage: "Queen"
+ },
+ {
+indice: "Quel chanteur est connu pour ses ballades puissantes et a chanté 'My Heart Will Go On'?",
+personnage: "Céline Dion"
+ },
+ {
+indice: "Qui a chanté 'Smells Like Teen Spirit'?",
+personnage: "Nirvana"
+ },
+ {
+indice: "Quel artiste a sorti l'album 'Born to Die'?",
+personnage: "Lana Del Rey"
+ },
+ {
+indice: "Quel groupe est connu pour le tube 'With or Without You'?",
+personnage: "U2"
+ },
+ {
+indice: "Quel rappeur est connu pour son style unique et son album 'Graduation'?",
+personnage: "Kanye West"
+ },
+ {
+indice: "Qui a chanté 'Respect' et est une icône de la soul?",
+personnage: "Aretha Franklin"
+ },
+ {
+indice: "Qui est connu comme le 'Boss' du rock et chante 'Born to Run'?",
+personnage: "Bruce Springsteen"
+ },
+ {
+indice: "Quel groupe a chanté 'Hotel California'?",
+personnage: "The Eagles"
+ },
+ {
+indice: "Qui a chanté 'Like a Rolling Stone' et est une légende du folk-rock?",
+personnage: "Bob Dylan"
+ },
+ {
+indice: "Quel artiste domine les charts avec son style pop et des chansons comme 'Blinding Lights'?",
+personnage: "The Weeknd"
+ },
+ {
+indice: "Qui est l'interprète de 'Oops!... I Did It Again'?",
+personnage: "Britney Spears"
+ },
+ {
+indice: "Quel groupe a chanté 'Enter Sandman' et est une légende du métal?",
+personnage: "Metallica"
+ },
+ {
+indice: "Quel chanteur est connu pour le tube 'Billie Jean' et ses talents de danseur exceptionnels?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Qui a chanté 'Someone Like You' et est réputée pour sa voix émouvante?",
+personnage: "Adele"
+ },
+ {
+indice: "Quel artiste est connu pour sa musique engagée et des chansons comme 'Zombie'?",
+personnage: "The Cranberries"
+ },
+ {
+indice: "Quel groupe est connu pour son album 'The Dark Side of the Moon'?",
+personnage: "Pink Floyd"
+ },
+ {
+indice: "Qui a chanté 'Losing My Religion'?",
+personnage: "R.E.M."
+ },
+ {
+indice: "Quel groupe a chanté 'Stairway to Heaven' et est une légende du rock?",
+personnage: "Led Zeppelin"
+ },
+{
+indice: "Quel chanteur est connu pour le tube 'Hallelujah' et son style poignant?",
+personnage: "Leonard Cohen"
+ },
+ {
+indice: "Qui a chanté 'Girls Just Want to Have Fun' et est une icône pop des années 80?",
+personnage: "Cyndi Lauper"
+ },
+ {
+indice: "Quel artiste domine les charts avec ses tubes pop et son style unique?",
+personnage: "Taylor Swift"
+ },
+{
+indice: "Quel artiste est connu pour son album 'Back to Black'?",
+personnage: "Amy Winehouse"
+ },
+ {
+indice: "Quel groupe est connu pour ses concerts enflammés et son tube 'Paradise City'?",
+personnage: "Guns N' Roses"
+ },
+ {
+indice: "Qui a chanté 'Rolling in the Deep' et est une chanteuse britannique à la voix puissante?",
+personnage: "Adele"
+ },
+ {
+indice: "Quel artiste a connu un succès mondial avec son tube 'Happy'?",
+personnage: "Pharrell Williams"
+ },
+ {
+indice: "Quel groupe est connu pour son album concept 'The Wall'?",
+personnage: "Pink Floyd"
+ },
+ {
+indice: "Qui a chanté 'Wonderwall' et est un groupe phare de la Britpop?",
+personnage: "Oasis"
+ },
+ {
+indice: "Quel artiste est connu pour son engagement humanitaire et sa chanson 'Heal the World'?",
+personnage: "Michael Jackson"
+ },
+ {
+indice: "Quel groupe est connu pour son tube 'Don't Stop Me Now' et son énergie débordante?",
+personnage: "Queen"
+ },
+ {
+indice: "Qui a chanté 'Like a Prayer' et est une icône de la pop provocatrice?",
+personnage: "Madonna"
+ },
+ {
+indice: "Quel artiste a connu un succès mondial avec son album 'Divide'?",
+personnage: "Ed Sheeran"
+ },
+{
+indice: "Quel groupe a chanté 'Imagine' et est un symbole de paix et d'espoir?",
+personnage: "John Lennon"
+ },
+ {
+indice: "Quel artiste est connu pour ses performances énergiques et ses tubes comme 'Born This Way'?",
+personnage: "Lady Gaga"
+ }
+]
+          
+      
+      let musisqueActuelle;
+      function nouvelleMusique(){
+          let indexAleatoire = Math.floor(Math.random()* musique.length)
+          musiqueActuelle = musique[indexAleatoire]
+          document.getElementById("musique").innerHTML= musiqueActuelle.indice;
+      }
+      nouvelleMusique();
+      
+      function Musique() {
+          let resultat = document.getElementById("commentaire")
+          let reponse = document.getElementById("reponse")
+          let score = document.getElementById("score")
+          let reponseUser = reponse.value.toLowerCase();
+          if(reponseUser === musiqueActuelle.personnage.toLowerCase()) {
+              resultat.textContent= "Félicitations Mci" 
+              resultat.style.color='blue'
+              scoreTotal +=100
+              score.textContent=`Points : ${scoreTotal}`
+              nouvelleMusique();
+          }else {
+          scoreTotal -=20
+              resultat.textContent="Sérieusement, achètes des casque pour mieux entendre"
+              resultat.style.color='red'
+              score.textContent=`Points : ${scoreTotal}`
+          }
+      }
+      
+      </script>
+      
+      
+      </body>
+      </html>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

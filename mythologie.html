@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>Quiz Mythologie 🕷</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+        }
+                                                                            
+                                        
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                                            
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: ;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+ 
+        h1{
+            font-family: Georgia, serif;
+            color: black;
+        }
 
+        input[type="text"] {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-color: black;
+            border-radius: 10px 10px;
+            background-color: white;
+            color: black;
+            font-family: Georgia,serif;
+        }
+        
+        button {
+            padding: 15px;
+            margin: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius:8px 8px;
+            cursor: pointer;
+            font-family: Georgia,serif;
+            width: 50%;
+            
+        }
+        button:hover{
+            background-color: cyan;
+            color: white;
+        }
+        button:active{
+            background-color: blue;
+        }
+.resultat {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .indice {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-family: Georgia, serif;
+        }
+        .p ,p{
+            font-family: Georgia,serif;
+            font-size: 1.2em;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+   <h1>Mythologie 🌬</h1>   
+   <p id="mythologie"></p>
+   <input type="text" placeholder="Votre reponse Seigneur" id="reponse">
+   <button onclick="mytho()">Réponse </button>
+   <p id="score" class="p">Points : 0</p>
+   <p id="commentaire" ></p>
+  </div>
+    
+    <script>
+        let scoreTo = 0;
+        let mythologie =[
+  {
+    indice: "Je suis le roi des dieux de l'Olympe, maître de la foudre et du ciel.",
+    personnage: "Zeus"
+  },
+  {
+    indice: "Je suis la déesse de l'amour et de la beauté, née de l'écume de la mer.",
+    personnage: "Aphrodite"
+  },
+  {
+    indice: "Je suis le dieu de la mer, des tremblements de terre et des chevaux.",
+    personnage: "Poséidon"
+  },
+  {
+    indice: "Je suis le dieu des enfers, gardien des âmes des morts.",
+    personnage: "Hadès"
+  },
+  {
+    indice: "Je suis la déesse de la sagesse, de la guerre juste et de l'artisanat.",
+    personnage: "Athéna"
+  },
+  {
+    indice: "Je suis le dieu de la lumière, de la musique, de la poésie et de la guérison.",
+personnage: "Apollon"
+  },
+  {
+    indice: "Je suis la déesse de la chasse, de la nature sauvage et de la lune.",
+    personnage: "Artémis"
+  },
+  {
+    indice: "Je suis le dieu de la guerre, de la violence et du tumulte.",
+    personnage: "Arès"
+  },
+  {
+    indice: "Je suis le dieu du feu, de la forge et des artisans.",
+    personnage: "Héphaïstos"
+  },
+  {
+    indice: "Je suis la messagère des dieux, connue pour mes sandales ailées.",
+    personnage: "Hermès"
+  },
+  {
+    indice: "Je suis la déesse du mariage, de la famille et de la fidélité.",
+    personnage: "Héra"
+  },
+  {
+    indice: "Je suis le fils de Zeus, connu pour sa force herculéenne.",
+    personnage: "Héraclès / Hercule"
+  },
+  {
+    indice: "J'ai coupé la tête de Méduse et monté Pégase.",
+    personnage: "Persée"
+  },
+  {
+    indice: "J'ai ouvert la boîte contenant tous les maux du monde.",
+    personnage: "Pandore"
+  },
+  {
+    indice: "Je suis le gardien du monde souterrain, un chien à trois têtes.",
+personnage: "Cerbère"
+  },
+  {
+    indice: "Je suis une créature mi-homme, mi-taureau, enfermée dans un labyrinthe.",
+    personnage: "Le Minotaure"
+  },
+  {
+    indice: "Je suis un héros qui a navigué vers la Toison d'or.",
+    personnage: "Jason"
+  },
+  {
+    indice: "Je suis une créature avec un corps de lion et une tête humaine, posant des énigmes.",
+    personnage: "Le Sphinx"
+  },
+  {
+    indice: "Je suis une nymphe transformée en laurier pour échapper à Apollon.",
+    personnage: "Daphné"
+  },
+  {
+    indice: "Je suis une nymphe qui ne pouvait que répéter les mots des autres.",
+    personnage: "Écho"
+  },
+  {
+    indice: "Je suis un roi qui a tout transformé en or en me touchant.",
+    personnage: "Midas"
+  },
+  {
+    indice: "Je suis un géant borgne, fils de Poséidon.",
+    personnage: "Cyclope"
+  },
+  {
+    indice: "Je suis un groupe de créatures marines qui attirent les marins avec leurs chants.",
+    personnage: "Les Sirènes"
+  },
+  {
+    indice: "Je suis une créature à    plusieurs têtes, vivant dans un détroit étroit.",
+    personnage: "Hydre de Lerne"
+  },
+  {
+    indice: "Je suis un bateau qui transporte les âmes des morts à travers le Styx.",
+    personnage: "Le bateau de Charon"
+  },
+  {
+    indice: "J'étais un dieu qui a volé le feu aux dieux et l'a donné aux humains.",
+    personnage: "Prométhée"
+  },
+  {
+    indice: "Je suis tombé amoureux de mon propre reflet.",
+    personnage: "Narcisse"
+  },
+  {
+    indice: "Je suis une reine amazone tuée par Achille.",
+    personnage: "Penthésilée"
+  },
+  {
+    indice: "Je suis un guerrier grec dont le seul point faible était mon talon.",
+    personnage: "Achille"
+  },
+  {
+    indice: "Je suis la déesse de la terre, mère de tous les êtres.",
+    personnage: "Gaïa"
+  },
+  {
+    indice: "Je suis le Titan qui personifie la mémoire.",
+    personnage: "Mnémosyne"
+  },
+  {
+    indice: "Je suis le dieu du vin, de la fertilité, des rituels religieux et du théâtre.",
+    personnage: "Dionysos"
+  },
+  { 
+    indice:  "Je suis le géant à cent bras et cinquante têtes fils de Gaïa et Uranus.",
+    personnage: "Hécatonchires"
+  },
+  {
+    indice: "Je suis la déesse des moissons.",
+    personnage: "Déméter"
+  },
+  {
+    indice: "Je suis une créature avec un corps de cheval et un buste d'homme.",
+    personnage: "Centaure"
+  },
+  {
+    indice: "Je suis la déesse de la magie, des carrefours et des créatures de la nuit.",
+    personnage: "Hécate"
+  },
+  {
+    indice: "Je suis le Titan qui a tenu le ciel sur ses épaules.",
+    personnage: "Atlas"
+  },
+  {
+    indice: "Je suis un mortel qui devint immortel après avoir volé l'ambroisie des dieux.",
+    personnage: "Tantale"
+  },
+  {
+    indice: "Je suis la fleuve qui sépare le monde des vivants du monde souterrain.",
+    personnage: "Styx"
+  },
+  {
+    indice: "J'étais la femme d'Hadès enlevée et emmenée dans le monde souterrain.",
+    personnage: "Perséphone"
+  },
+  {
+    indice: "J'étais un grand charpentier et artisan, j'ai construit le labyrinthe de Créte.",
+    personnage: "Dédale"
+  },
+    {
+    indice: "J'ai aidé Thésée à sortir du labyrinthe.",
+    personnage: "Ariane"
+  },
+   {
+    indice: "Je suis l'épouse d'Ulysse, réputée pour sa fidélité.",
+    personnage: "Pénélope"
+  },
+   {
+    indice: "Je suis le fils d'Ulysse.",
+    personnage: "Télémaque"
+  },
+   {
+    indice: "J'ai été transformée en araignée pour avoir défié Athéna.",
+    personnage: "Arachné"
+  },
+   {
+    indice: "Je suis un des douze travaux d'Héraclès, consistant à tuer un lion à peau impénétrable.",
+    personnage: "Le lion de Némée"
+  },
+   {
+    indice: "Je suis la déesse de la victoire.",
+    personnage: "Niké"
+  },
+   {
+    indice: "Je suis le roi de Troie lors de la guerre contre les Grecs.",
+    personnage: "Priam"
+  },
+   {
+    indice: "Je suis un cheval de bois utilisé par les Grecs pour infiltrer Troie.",
+    personnage: "Le cheval de Troie"
+  },
+   {
+    indice: "Je suis l'oiseau de feu qui renaît de ses cendres.",
+    personnage: "Le phénix"
+ } 
+ ] 
+     let mythologieActuelle;
+     function nouvelleMythologie() {
+        let indexAleatoire = Math.floor(Math.random()* mythologie.length)
+   mythologieActuelle = mythologie[indexAleatoire]
+
+document.getElementById("mythologie").innerHTML=mythologieActuelle.indice;
+ }  
+ 
+ nouvelleMythologie();
+ 
+     function mytho() {
+         let score = document.getElementById("score")
+         let reponse = document.getElementById('reponse')
+         let resultat = document.getElementById("commentaire")
+         let reponseUser = reponse.value.toLowerCase();
+         if(reponseUser === mythologieActuelle.personnage.toLowerCase()) {
+         scoreTo +=100
+             resultat.textContent = "Félicitations, Tu es bien plus que zeus ⚡"
+             
+             nouvelleMythologie();
+             score.textContent= `Points : ${scoreTo}` ;
+         resultat.style.color='blue'
+         } else {
+         scoreTo -=10
+             resultat.textContent="Faux ! essaie encore"
+             resultat.style.color ='red'
+             score.textContent=`Points : ${scoreTo}`
+         }
+         
+         reponse.value="";
+     }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    </script>
+</body>
+</html>

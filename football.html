@@ -1,1 +1,405 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>FootBall ⚽</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: white;
+        }                                                              
+        .container {
+        background-color: white;
+          text-align: center;
+            padding: 5px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+ 
+        h1{
+            font-family: Georgia, serif;
+            color: black;
+        }
 
+        input[type="text"] {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-color: black;
+            border-radius: 10px 10px;
+            background-color: white;
+            color: black;
+            font-family: Georgia,serif;
+        }
+        
+        button {
+            padding: 15px;
+            margin: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius:8px 8px;
+            cursor: pointer;
+            font-family: Georgia,serif;
+            width: 50%;
+            
+        }
+        button:hover{
+            background-color: cyan;
+            color: white;
+        }
+        button:active{
+            background-color: blue;
+        }
+.resultat {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .indice {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-family: Georgia, serif;
+        }
+        .p ,p{
+            font-family: Georgia,serif;
+            font-size: 1.2em;
+            color:  #000000;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="container">
+   <h1>Jeune Footballeur ⚽</h1>   
+   <i><p id="foot"></p></i>
+   <input type="text" placeholder="Votre reponse joueur" id="reponse">
+   <button onclick="football()">Réponse </button>
+   <p id="score" class="p">Points : 0</p>
+   <p id="commentaire" ></p>
+  </div>
+  <script>
+      let scoreTo = 0;
+      let foot = 
+[
+ {
+indice: "Quel pays a remporté la Coupe du Monde de la FIFA en 2022?",
+personnage: "Argentine"
+ },
+ {
+indice: "Quel club a remporté la Ligue des Champions de l'UEFA en 2024?",
+personnage: "À déterminer (la saison se déroule en 2024)"
+ },
+ {
+indice: "Qui est le meilleur buteur de l'histoire de la Ligue 1?",
+personnage: "Delio Onnis"
+ },
+ {
+indice: "Quel est le nom du stade du FC Barcelone?",
+personnage: "Camp Nou"
+ },
+ {
+indice: "Combien de joueurs y a-t-il dans une équipe de football?",
+personnage: "11"
+ },
+ {
+indice: "Quel est le rôle du gardien de but?",
+personnage: "Empêcher le ballon d'entrer dans le but"
+ },
+ {
+indice: "Combien de temps dure un match de football (hors temps additionnel)?",
+personnage: "90 minutes"
+ },
+ {
+indice: "Qu'est-ce qu'un carton jaune?",
+personnage: "Un avertissement donné à un joueur pour une faute"
+ },
+ {
+indice: "Qu'est-ce qu'un carton rouge?",
+personnage: "Une expulsion d'un joueur du match"
+ },
+ {
+indice: "Qu'est-ce qu'un penalty?",
+personnage: "Un coup de pied accordé à une équipe lorsqu'un joueur adverse commet une faute dans la surface de réparation"
+ },
+ {
+indice: "Qu'est-ce qu'un coup franc?",
+personnage: "Un coup de pied accordé à une équipe lorsqu'un joueur adverse commet une faute en dehors de la surface de réparation"
+ },
+ {
+indice: "Qu'est-ce qu'un corner?",
+personnage: "Un coup de pied accordé à une équipe lorsque le ballon sort du terrain après avoir été touché en dernier par un joueur de l'équipe adverse"
+ },
+ {
+indice: "Qu'est-ce qu'un hors-jeu?",
+personnage: "Une règle qui interdit à un joueur d'être plus près de la ligne de but adverse que le ballon et l'avant-dernier défenseur au moment où le ballon lui est passé"
+ },
+ {
+indice: "Qu'est-ce qu'un tacle?",
+personnage: "Une action visant à prendre le ballon à un joueur adverse"
+ },
+ {
+indice: "Qu'est-ce qu'une passe?",
+personnage: "Une action visant à envoyer le ballon à un coéquipier"
+ },
+ {
+indice: "Qu'est-ce qu'un dribble?",
+personnage: "Une action visant à avancer avec le ballon en évitant les joueurs adverses"
+ },
+ {
+indice: "Qu'est-ce qu'un tir?",
+personnage: "Une action visant à envoyer le ballon vers le but adverse"
+ },
+ {
+indice: "Qu'est-ce qu'une tête?",
+personnage: "Une action visant à frapper le ballon avec la tête"
+ },
+ {
+indice: "Qu'est-ce qu'un but contre son camp?",
+personnage: "Un but marqué par un joueur dans son propre but"
+ },
+ {
+indice: "Qu'est-ce qu'un match nul?",
+personnage: "Un match qui se termine sans qu'aucune équipe ne marque plus de buts que l'autre"
+ },
+  {
+indice: "Qui a remporté le ballon d'or en 2024?",
+personnage: "À déterminer (la saison se déroule en 2024)"
+ },
+  {
+indice: "Quel pays a remporté la    première coupe du monde?",
+personnage: "Uruguay"
+ },
+  {
+indice: "Où a eu lieu la première coupe du monde?",
+personnage: "Uruguay"
+ },
+  {
+indice: "Qui est le meilleur buteur de l'histoire de la coupe du monde?",
+personnage: "Miroslav Klose"
+ },
+   {
+indice: "Quel est le club le plus titré en Ligue des Champions?",
+personnage: "Real Madrid"
+ },
+  {
+indice: "Quel est le club le plus titré en Premier League?",
+personnage: "Manchester United"
+ },
+   {
+indice: "Quel est le club le plus titré en Série A?",
+personnage: "Juventus"
+ },
+ {
+indice: "Qu'est-ce que le fair-play financier?",
+personnage: "Règlement visant à empêcher les clubs de dépenser plus qu'ils ne gagnent"
+ },
+ {
+indice: "Quel est le rôle d'un arbitre assistant?",
+personnage: "Aider l'arbitre principal à prendre des décisions"
+ },
+ {
+indice: "Qu'est-ce que la VAR?",
+personnage: "Assistance vidéo à l'arbitrage"
+ },
+  {
+indice: "Quelle est la durée de la prolongation?",
+personnage: "30 minutes"
+ },
+  {
+indice: "Combien de remplacements sont autorisés dans un match de football?",
+personnage: "5"
+ },
+   {
+indice: "Qu'est-ce qu'un 'clean sheet'?",
+personnage: "Un match où une équipe n'encaisse aucun but"
+ },
+   {
+indice: "Qu'est-ce qu'un triplé (coup du chapeau)?",
+personnage: "Un joueur qui marque trois buts dans un même match"
+ },
+  {
+indice: "Qu'est-ce qu'un doublé?",
+personnage: "Un joueur qui marque deux buts dans un même match"
+ },
+ {
+indice: "Qu'est-ce qu'un milieu de terrain?",
+personnage: "Un joueur qui évolue entre la défense et l'attaque"
+ },
+ {
+indice: "Qu'est-ce qu'un attaquant?",
+personnage: "Un joueur dont le rôle principal est de marquer des buts"
+ },
+ {
+indice: "Qu'est-ce qu'un défenseur?",
+personnage: "Un joueur dont le rôle principal est d'empêcher l'équipe adverse de marquer des buts"
+ },
+ {
+indice: "Qu'est-ce qu'un latéral?",
+personnage: "Un défenseur qui joue sur les côtés du terrain"
+ },
+ {
+indice: "Qu'est-ce qu'un milieu   défensif?",
+personnage: "Un milieu de terrain dont le rôle principal est de protéger la défense"
+ },
+  {
+indice: "Qu'est-ce qu'un milieu offensif?",
+personnage: "Un milieu de terrain dont le rôle principal est de créer des occasions de buts"
+ },
+   {
+indice: "Quelle est la différence entre un 4-4-2 et un 4-3-3?",
+personnage: "La disposition des joueurs au milieu de terrain et en attaque"
+ },
+  {
+indice: "Qu'est-ce qu'un but en or (golden goal)?",
+personnage: "Règle où le premier but en prolongation mettait fin au match "
+ },
+   {
+indice: "Qu'est-ce qu'un but en argent (silver goal)?",
+personnage: "Règle où si une équipe était en tête à la fin de la première mi-temps de la prolongation"
+ },
+  {
+indice: "Qu'est-ce qu'un 'tifo'?",
+personnage: "Une animation visuelle réalisée par les supporters dans les tribunes"
+ },
+ {
+indice: "Qu'est-ce qu'un 'derby'?",
+personnage: "Un match opposant deux équipes d'une même ville ou région"
+ },
+ {
+indice: "Qu'est-ce  qu'un 'classique'?",
+personnage: "Un match opposant deux des plus grandes équipes d'un pays ou d'une région"
+ },
+ {
+indice: "Qui est Pelé?",
+personnage: "Un ancien footballeur brésilien considéré comme l'un des meilleurs joueurs de tous les temps"
+ },
+ {
+indice: "Qui est Diego Maradona?",
+personnage: "Un ancien footballeur argentin"
+ },
+  {
+indice: "Qu'est-ce que le 'catenaccio'?",
+personnage: "Une tactique de jeu défensive italienne"
+ },
+   {
+indice: "Qu'est-ce que le 'gegenpressing'?",
+personnage: "Une tactique de jeu où l'équipe essaie de récupérer le ballon immédiatement après l'avoir perdu"
+ },
+  {
+indice: "Qu'est-ce que le 'kick and rush'?",
+personnage: "Une tactique de jeu directe consistant à envoyer de longs ballons vers l'avant"
+ },
+   {
+indice: "Quel est le surnom de l'équipe nationale de football du Brésil?",
+personnage: "Seleção"
+ },
+  {
+indice: "Quel est le surnom de l'équipe nationale de football d'Allemagne?",
+personnage: "Die Mannschaft"
+ },
+ {
+indice: "Quel est le surnom de l'équipe nationale de football d'Italie?",
+personnage: "Azzurri"
+ },
+ {
+indice: "Quel est le surnom de l'équipe nationale de football d'Argentine?",
+personnage: "Albiceleste"
+ },
+ {
+indice: "Quel est le surnom de l'équipe nationale de football de France?",
+personnage: "Les Bleus"
+ },
+ {
+indice: "Combien de fois le Brésil a-t-il remporté la Coupe du Monde?",
+personnage: "5"
+ },
+ {
+indice: "Qui est l'entraineur de L'équipe de France en 2025?",
+personnage: "À déterminer"
+ },
+ {
+indice: "Quel est le joueur le plus rapide du monde?",
+personnage: "À déterminer"
+ },
+ {
+indice: "Quel est le joueur le plus lent du monde?",
+personnage: "À déterminer"
+ },
+ {
+indice: "Quel est le joueur avec le plus d'abonnés sur instagram?",
+personnage: "Cristiano Ronaldo"
+ },
+ {
+indice: "Quel est l'équipe la plus chers au monde en 2025?",
+personnage: "À déterminer"
+ },
+ {
+indice: "Quel est le championnat le plus  prestigieux?",
+personnage: "Premier League"
+ },
+ {
+indice: "Combien d'équipe participe à une coupe du monde?",
+personnage: "32"
+ }
+]
+    let footActuelle;
+    function nouveauFoot() {
+        let indexAleatoire = Math.floor(Math.random()* foot.length)
+        footActuelle = foot[indexAleatoire]
+        document.getElementById("foot").innerHTML= footActuelle.indice;
+         }
+    nouveauFoot();
+    
+    
+   function football() {
+       let resultat = document.getElementById("commentaire")
+       let score = document.getElementById("score")
+       let reponse = document.getElementById("reponse")
+       let reponseUser = reponse.value.toLowerCase();
+       if(reponseUser === footActuelle.personnage.toLowerCase()) {
+            scoreTo +=100 ;
+            resultat.textContent="Futur Joueur ! Bravo !"
+            resultat.style.color='blue'
+            score.textContent=`Points : ${scoreTo}`
+            
+            nouveauFoot();
+       }
+       else {
+           scoreTo -=10
+           resultat.textContent=`Tu devrais arrêter les foots `
+           resultat.style.color="red"
+           score.textContent= `Points : ${scoreTo}`
+       }
+       reponse.value="";
+   } 
+
+
+
+
+
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+  </html>

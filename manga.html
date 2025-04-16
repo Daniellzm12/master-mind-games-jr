@@ -1,1 +1,428 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title>Otaku legende</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+        }
+                                                                            
+                                        
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                                            
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+ 
+        h1{
+            font-family: Georgia, serif;
+            color: black;
+        }
 
+        input[type="text"] {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-color: black;
+            border-radius: 10px 10px;
+            background-color: white;
+            color: black;
+            font-family: Georgia,serif;
+        }
+        
+        button {
+            padding: 15px;
+            margin: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius:8px 8px;
+            cursor: pointer;
+            font-family: Georgia,serif;
+            width: 50%;
+            
+        }
+        button:hover{
+            background-color: cyan;
+            color: white;
+        }
+        button:active{
+            background-color: blue;
+        }
+.resultat {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .indice {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-family: Georgia, serif;
+        }
+        .p ,p{
+            font-family: Georgia,serif;
+            font-size: 1.2em;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+   <h1>Otaku Legends 🗿</h1>   
+   <i><p id="manga"></p></i>
+   <input type="text" placeholder="Votre reponse Seigneur" id="reponse">
+   <button onclick="mangaka()">Réponse </button>
+   <p id="score" class="p">Points : 0</p>
+   <p id="commentaire" ></p>
+  </div>
+  <script>
+      let scoreTo = 0;
+      let manga = 
+[
+ {
+ indice: "Je suis un jeune ninja orphelin qui rêve de devenir Hokage.",
+ personnage: "Naruto Uzumaki"
+ },
+ {
+ indice: "Je suis un lycéen qui obtient les pouvoirs d'un Shinigami en trouvant un Death Note.",
+ personnage: "Light Yagami"
+ },
+ {
+ indice: "Je suis un pirate au chapeau de paille qui rêve de devenir le roi des pirates.",
+ personnage: "Monkey D. Luffy"
+ },
+ {
+ indice: "Je suis un cyborg créé par le Docteur Gero pour tuer Son Goku.",
+ personnage: "Cell"
+ },
+ {
+ indice: "Je suis un guerrier Saiyan qui a grandi sur Terre et qui protège la planète.",
+ personnage: "Son Goku"
+ },
+ {
+ indice: "Je suis un chat qui parle et qui aide une jeune fille à devenir une magical girl.",
+ personnage: "Kyubey"   
+},
+ {
+ indice: "Je suis un détective lycéen qui résout des affaires complexes avec une grande intelligence.",
+ personnage: "Shinichi Kudo/Conan Edogawa"
+ },
+ {
+ indice: "Je suis un robot créé pour protéger la Terre des invasions extraterrestres.",
+ personnage: "Doraemon"
+ },
+ {
+ indice: "Je suis un dieu de la mort qui s'ennuie et qui laisse tomber un Death Note sur Terre.",
+ personnage: "Ryuk"
+ },
+ {
+ indice: "Je suis un vampire qui se bat contre les humains pour protéger sa famille.",
+ personnage: "Alucard"
+ },
+ {
+ indice: "Je suis une magical girl qui se bat contre les forces du mal avec l'aide de son familier.",
+ personnage: "Sakura Kinomoto"
+ },
+ {
+ indice: "Je suis un chasseur de primes de l'espace qui est connu pour sa coiffure afro.",
+ personnage: "Spike Spiegel"
+ },
+ {
+ indice: "Je suis une jeune fille qui découvre qu'elle est la réincarnation d'une princesse guerrière.",
+ personnage: "Sailor Moon"
+ },
+ {
+ indice: "Je suis un humain doté de pouvoirs psychiques qui se bat contre des créatures étranges.",
+ personnage: "Mob"
+ },
+ {
+ indice: "Je suis un exorciste qui se bat contre les démons pour protéger l'humanité.",
+ personnage: "Rin Okumura"
+ },
+ {
+ indice: "Je suis un samouraï errant qui cherche à se venger de ceux qui ont tué son maître.",
+ personnage: "Kenshin Himura"
+ },
+ {
+ indice: "Je suis un jeune homme qui hérite d'un cahier qui lui permet de voyager dans le temps.",
+ personnage: "Takemichi Hanagaki"
+ },
+ {
+ indice: "Je suis une écolière qui devient un zombie après avoir été tuée dans une attaque.",
+ personnage: "Zombie Land Saga"
+ },
+ {
+ indice: "Je suis un chat ninja qui protège la ville d'Edo.",
+ personnage: "Kyatto Ninden Teyandee"
+ },
+ {
+ indice: "Je suis un dieu dragon qui peut exaucer n'importe quel souhait.",
+ personnage: "Shenron"
+ },
+ {
+ indice: "Je suis un jeune garçon qui découvre qu'il est un mage et qui part à l'aventure.",
+ personnage: "Natsu Dragnir"
+ },
+ {
+ indice: "Je suis un épéiste borgne qui cherche à se venger des  démons.",
+ personnage: "Guts"
+ },
+ {
+ indice: "Je suis une magical girl qui se bat contre d'autres magical girls pour un souhait.",
+ personnage: "Madoka Kaname"
+ },
+ {
+ indice: "Je suis un membre du corps d'exploration qui se bat contre les titans pour libérer l'humanité.",
+ personnage: "Eren Yeager"
+ },
+ {
+ indice: "Je suis un cuisinier qui utilise ses talents pour gagner des compétitions culinaires.",
+ personnage: "Soma Yukihira"
+ },
+ {
+ indice: "Je suis une jeune fille qui devient une magical girl pour protéger son ami.",
+ personnage: "Mami Tomoe"
+ },
+ {
+ indice: "Je suis un cyborg qui se bat aux côtés de Saitama pour protéger la ville.",
+ personnage: "Genos"
+ },
+ {
+ indice: "Je suis un homme qui devient un héros par hobby et qui peut vaincre n'importe quel ennemi avec un seul coup de poing.",
+ personnage: "Saitama"
+ },
+ {
+ indice: "Je suis un jeune chasseur de démons qui se bat pour venger sa famille.",
+ personnage: "Tanjiro Kamado"
+ },
+ {
+ indice: "Je suis un ancien assassin qui  devient professeur et qui doit entraîner ses élèves à devenir des assassins.",
+ personnage: "Koro-sensei"
+ },
+ {
+ indice: "Je suis la chef du bataillon d'investigation de l'armée.",
+ personnage: "Erwin Smith"
+ },
+ {
+ indice: "Je suis une jeune fille qui doit survivre à un jeu mortel pour gagner une somme d'argent.",
+ personnage: "Alice in Borderland"
+ },
+ {
+ indice: "Je suis un vampire chasseur de vampires.",
+ personnage: "Blade"
+ },
+ {
+ indice: "Je suis le meilleur ami du protagonista et un des guerriers les plus forts.",
+ personnage: "Vegeta"
+ },
+ {
+ indice: "Je suis une guerrière magical avec les cheveux blonde est une des protectrices du soleil.",
+ personnage: "Sailor Venus"
+ },
+ {
+ indice: "Je suis une guerrière magical avec les cheveux bleu est une des protectrices de l'eau.",
+ personnage: "Sailor Mercury"
+ },
+ {
+ indice: "J'ai été élevé par une louve et je suis un grand guerrier.",
+ personnage: "San (Princesse Mononoké)"
+ },
+ {
+ indice: "Je suis le frère de Itachi.", 
+personnage: "Sasuke"
+ },
+ {
+ indice: "Je suis le premier disciple de Saitama.",
+ personnage: "Genos"
+ },
+ {
+ indice: "Je suis le plus puissant des sept péchés capitaux.",
+ personnage: "Meliodas"
+ },
+ {
+ indice: "J'aide L à résoudre le cas Kira.",
+ personnage: "Misa Amane"
+ },
+ {
+ indice: "Je suis le ninja copieur.",
+ personnage: "Kakashi"
+ },
+ {
+ indice: "Je suis le renégat qui a exterminé son clan.",
+ personnage: "Itachi"
+ },
+ {
+ indice: "Je suis le chasseur de démons au masque de sanglier.",
+ personnage: "Inosuke"
+ },
+ {
+ indice: "Je suis le camarade peureux de Tanjiro.",
+ personnage: "Zenitsu"
+ },
+ {
+ indice: "Je suis le pilier de l'eau.",
+ personnage: "Giyu Tomioka"
+ },
+ {
+ indice: "Je suis le mentor de Tanjiro.",
+ personnage: "Urokodaki Sakonji"
+ },
+ {
+ indice: "Je suis un lycéen qui doit combattre des êtres maléfiques appelés Fléaux.",
+ personnage: "Yuji Itadori"
+ },
+ {
+ indice: "Je suis le sorcier le plus puissant.",
+ personnage: "Satoru Gojo"
+ },
+ {
+ indice: "Je suis une des 12 Kizuki, et j'utilise des fils pour manipuler les gens.",
+ personnage: "Rui"
+ },
+ {
+ indice: "Je suis la princesse du royaume de Kouka qui chercha à se venger après avoir été trahie.",
+ personnage: "Yona"
+ },
+ {
+ indice: "Je suis une experte en armes à feu du groupe de Yona, et la descendante d'un général.",
+ personnage: "Hae"
+ },
+ {
+ indice: "Je suis un des quatre dragons guerriers qui a le pouvoir de l’œil du dragon.",
+ personnage: "Kija"
+ },
+ {
+ indice: "Je suis le dragon bleu, muet, qui vivait caché dans un village souterrain.",
+ personnage: "Shin-ah"
+ },
+ {
+ indice: "Je suis le dragon vert du clan du vent.",
+ personnage: "Jaeha"
+ },
+ {
+ indice: "J'ai une maladie qui m'a fait perdre la vue et le gout.",
+ personnage: "Zeno"
+ },
+ {
+ indice: "Je suis un célèbre détective connu pour ses raisonnements logiques et son aversion pour les losers.",
+ personnage: "L Lawliet"
+ },
+ {
+ indice: "Je suis une jeune fille qui se bat pour devenir la meilleure boulangère du monde.",
+ personnage: "Kazuki Azuma"
+ },
+ {
+ indice: "Je suis une des élèves de Korosensei, et experte en assassinats.",
+ personnage: "Kaede Kayano"
+ },
+ {
+ indice: "Je suis un dieu du football.",
+ personnage: "Oliver Atton"
+ },
+ {
+ indice: "Je suis un jeune garçon qui peut voir les esprits.",
+ personnage: "Ichigo Kurosaki"
+ },
+ {
+ indice: "Je suis le capitaine du Gotei 13.",
+ personnage: "Genryūsai Shigekuni Yamamoto"
+ },
+ {
+ indice: "Je suis le rival d'Ichigo et le capitaine du Gotei 6.",
+ personnage: "Byakuya Kuchiki"
+ },
+ {
+ indice: "Je suis un élève de la classe E dans Assasination Classroom, mais je viens d'une famille riche.",
+ personnage: "Karma Akabane"
+ },
+ {
+ indice: "Je suis le frère de Edward Elric.",
+ personnage: "Alphonse Elric"
+ },
+ {
+ indice: "Je suis le Shinigami que remplace Ichigo.",
+ personnage: "Rukia Kuchiki"
+ },
+ {
+ indice: "Je suis un magicien qui peut utiliser la magie de la glace.",
+ personnage: "Gray Fullbuster"
+ },
+ {
+ indice: "Je suis l'héritier du Hokuto Shinken",
+ personnage: "Kenshiro"
+ },
+ {
+ indice: "J'ai un alter qui me permet de copier les alter des autres.",
+ personnage: "Mirio"
+ },
+ {
+ indice: "Je suis une apprentie à U.A dont l'alter lui permet de se transformer en grenouille.",
+ personnage: "Tsuyu Asui"
+ }
+]
+    let mangaActuelle;
+    function nouveauManga() {
+        let indexAleatoire = Math.floor(Math.random()* manga.length)
+        mangaActuelle = manga[indexAleatoire]
+        document.getElementById("manga").innerHTML= mangaActuelle.indice;
+         }
+    nouveauManga();
+    
+    
+   function mangaka() {
+       let resultat = document.getElementById("commentaire")
+       let score = document.getElementById("score")
+       let reponse = document.getElementById("reponse")
+       let reponseUser = reponse.value.toLowerCase();
+       if(reponseUser === mangaActuelle.personnage.toLowerCase()) {
+            scoreTo +=100 ;
+            resultat.textContent="Otaku un jour Otaku toujours ! Bravo !"
+            resultat.style.color='blue'
+            score.textContent=`Points : ${score}`
+            
+            nouveauManga();
+       }
+       else {
+           scoreTo -=10
+           resultat.textContent=`Tu devrais revoir ton nom d'Otaku`
+           resultat.style.color="red"
+           score.textContent= `Points : ${scoreTo}`
+       }
+       reponse.value="";
+   } 
+
+
+
+
+
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </body>
+  </html>

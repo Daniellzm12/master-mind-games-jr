@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -93,269 +93,333 @@
   </div>
   <script>
       let scoreTo = 0;
-      let foot = 
-[
- {
-indice: "Quel pays a remporté la Coupe du Monde de la FIFA en 2022?",
-personnage: "Argentine"
- },
- {
-indice: "Quel club a remporté la Ligue des Champions de l'UEFA en 2024?",
-personnage: "À déterminer (la saison se déroule en 2024)"
- },
- {
-indice: "Qui est le meilleur buteur de l'histoire de la Ligue 1?",
-personnage: "Delio Onnis"
- },
- {
-indice: "Quel est le nom du stade du FC Barcelone?",
-personnage: "Camp Nou"
- },
- {
-indice: "Combien de joueurs y a-t-il dans une équipe de football?",
-personnage: "11"
- },
- {
-indice: "Quel est le rôle du gardien de but?",
-personnage: "Empêcher le ballon d'entrer dans le but"
- },
- {
-indice: "Combien de temps dure un match de football (hors temps additionnel)?",
-personnage: "90 minutes"
- },
- {
-indice: "Qu'est-ce qu'un carton jaune?",
-personnage: "Un avertissement donné à un joueur pour une faute"
- },
- {
-indice: "Qu'est-ce qu'un carton rouge?",
-personnage: "Une expulsion d'un joueur du match"
- },
- {
-indice: "Qu'est-ce qu'un penalty?",
-personnage: "Un coup de pied accordé à une équipe lorsqu'un joueur adverse commet une faute dans la surface de réparation"
- },
- {
-indice: "Qu'est-ce qu'un coup franc?",
-personnage: "Un coup de pied accordé à une équipe lorsqu'un joueur adverse commet une faute en dehors de la surface de réparation"
- },
- {
-indice: "Qu'est-ce qu'un corner?",
-personnage: "Un coup de pied accordé à une équipe lorsque le ballon sort du terrain après avoir été touché en dernier par un joueur de l'équipe adverse"
- },
- {
-indice: "Qu'est-ce qu'un hors-jeu?",
-personnage: "Une règle qui interdit à un joueur d'être plus près de la ligne de but adverse que le ballon et l'avant-dernier défenseur au moment où le ballon lui est passé"
- },
- {
-indice: "Qu'est-ce qu'un tacle?",
-personnage: "Une action visant à prendre le ballon à un joueur adverse"
- },
- {
-indice: "Qu'est-ce qu'une passe?",
-personnage: "Une action visant à envoyer le ballon à un coéquipier"
- },
- {
-indice: "Qu'est-ce qu'un dribble?",
-personnage: "Une action visant à avancer avec le ballon en évitant les joueurs adverses"
- },
- {
-indice: "Qu'est-ce qu'un tir?",
-personnage: "Une action visant à envoyer le ballon vers le but adverse"
- },
- {
-indice: "Qu'est-ce qu'une tête?",
-personnage: "Une action visant à frapper le ballon avec la tête"
- },
- {
-indice: "Qu'est-ce qu'un but contre son camp?",
-personnage: "Un but marqué par un joueur dans son propre but"
- },
- {
-indice: "Qu'est-ce qu'un match nul?",
-personnage: "Un match qui se termine sans qu'aucune équipe ne marque plus de buts que l'autre"
- },
-  {
-indice: "Qui a remporté le ballon d'or en 2024?",
-personnage: "À déterminer (la saison se déroule en 2024)"
- },
-  {
-indice: "Quel pays a remporté la    première coupe du monde?",
-personnage: "Uruguay"
- },
-  {
-indice: "Où a eu lieu la première coupe du monde?",
-personnage: "Uruguay"
- },
-  {
-indice: "Qui est le meilleur buteur de l'histoire de la coupe du monde?",
-personnage: "Miroslav Klose"
- },
-   {
-indice: "Quel est le club le plus titré en Ligue des Champions?",
-personnage: "Real Madrid"
- },
-  {
-indice: "Quel est le club le plus titré en Premier League?",
-personnage: "Manchester United"
- },
-   {
-indice: "Quel est le club le plus titré en Série A?",
-personnage: "Juventus"
- },
- {
-indice: "Qu'est-ce que le fair-play financier?",
-personnage: "Règlement visant à empêcher les clubs de dépenser plus qu'ils ne gagnent"
- },
- {
-indice: "Quel est le rôle d'un arbitre assistant?",
-personnage: "Aider l'arbitre principal à prendre des décisions"
- },
- {
-indice: "Qu'est-ce que la VAR?",
-personnage: "Assistance vidéo à l'arbitrage"
- },
-  {
-indice: "Quelle est la durée de la prolongation?",
-personnage: "30 minutes"
- },
-  {
-indice: "Combien de remplacements sont autorisés dans un match de football?",
-personnage: "5"
- },
-   {
-indice: "Qu'est-ce qu'un 'clean sheet'?",
-personnage: "Un match où une équipe n'encaisse aucun but"
- },
-   {
-indice: "Qu'est-ce qu'un triplé (coup du chapeau)?",
-personnage: "Un joueur qui marque trois buts dans un même match"
- },
-  {
-indice: "Qu'est-ce qu'un doublé?",
-personnage: "Un joueur qui marque deux buts dans un même match"
- },
- {
-indice: "Qu'est-ce qu'un milieu de terrain?",
-personnage: "Un joueur qui évolue entre la défense et l'attaque"
- },
- {
-indice: "Qu'est-ce qu'un attaquant?",
-personnage: "Un joueur dont le rôle principal est de marquer des buts"
- },
- {
-indice: "Qu'est-ce qu'un défenseur?",
-personnage: "Un joueur dont le rôle principal est d'empêcher l'équipe adverse de marquer des buts"
- },
- {
-indice: "Qu'est-ce qu'un latéral?",
-personnage: "Un défenseur qui joue sur les côtés du terrain"
- },
- {
-indice: "Qu'est-ce qu'un milieu   défensif?",
-personnage: "Un milieu de terrain dont le rôle principal est de protéger la défense"
- },
-  {
-indice: "Qu'est-ce qu'un milieu offensif?",
-personnage: "Un milieu de terrain dont le rôle principal est de créer des occasions de buts"
- },
-   {
-indice: "Quelle est la différence entre un 4-4-2 et un 4-3-3?",
-personnage: "La disposition des joueurs au milieu de terrain et en attaque"
- },
-  {
-indice: "Qu'est-ce qu'un but en or (golden goal)?",
-personnage: "Règle où le premier but en prolongation mettait fin au match "
- },
-   {
-indice: "Qu'est-ce qu'un but en argent (silver goal)?",
-personnage: "Règle où si une équipe était en tête à la fin de la première mi-temps de la prolongation"
- },
-  {
-indice: "Qu'est-ce qu'un 'tifo'?",
-personnage: "Une animation visuelle réalisée par les supporters dans les tribunes"
- },
- {
-indice: "Qu'est-ce qu'un 'derby'?",
-personnage: "Un match opposant deux équipes d'une même ville ou région"
- },
- {
-indice: "Qu'est-ce  qu'un 'classique'?",
-personnage: "Un match opposant deux des plus grandes équipes d'un pays ou d'une région"
- },
- {
-indice: "Qui est Pelé?",
-personnage: "Un ancien footballeur brésilien considéré comme l'un des meilleurs joueurs de tous les temps"
- },
- {
-indice: "Qui est Diego Maradona?",
-personnage: "Un ancien footballeur argentin"
- },
-  {
-indice: "Qu'est-ce que le 'catenaccio'?",
-personnage: "Une tactique de jeu défensive italienne"
- },
-   {
-indice: "Qu'est-ce que le 'gegenpressing'?",
-personnage: "Une tactique de jeu où l'équipe essaie de récupérer le ballon immédiatement après l'avoir perdu"
- },
-  {
-indice: "Qu'est-ce que le 'kick and rush'?",
-personnage: "Une tactique de jeu directe consistant à envoyer de longs ballons vers l'avant"
- },
-   {
-indice: "Quel est le surnom de l'équipe nationale de football du Brésil?",
-personnage: "Seleção"
- },
-  {
-indice: "Quel est le surnom de l'équipe nationale de football d'Allemagne?",
-personnage: "Die Mannschaft"
- },
- {
-indice: "Quel est le surnom de l'équipe nationale de football d'Italie?",
-personnage: "Azzurri"
- },
- {
-indice: "Quel est le surnom de l'équipe nationale de football d'Argentine?",
-personnage: "Albiceleste"
- },
- {
-indice: "Quel est le surnom de l'équipe nationale de football de France?",
-personnage: "Les Bleus"
- },
- {
-indice: "Combien de fois le Brésil a-t-il remporté la Coupe du Monde?",
-personnage: "5"
- },
- {
-indice: "Qui est l'entraineur de L'équipe de France en 2025?",
-personnage: "À déterminer"
- },
- {
-indice: "Quel est le joueur le plus rapide du monde?",
-personnage: "À déterminer"
- },
- {
-indice: "Quel est le joueur le plus lent du monde?",
-personnage: "À déterminer"
- },
- {
-indice: "Quel est le joueur avec le plus d'abonnés sur instagram?",
-personnage: "Cristiano Ronaldo"
- },
- {
-indice: "Quel est l'équipe la plus chers au monde en 2025?",
-personnage: "À déterminer"
- },
- {
-indice: "Quel est le championnat le plus  prestigieux?",
-personnage: "Premier League"
- },
- {
-indice: "Combien d'équipe participe à une coupe du monde?",
-personnage: "32"
- }
+      let foot = [
+{
+personnage: "Un ballon de football",
+indice: "Quel objet rond frappe-t-on avec les pieds ?"
+},
+{
+personnage: "Un but",
+indice: "Où doit-on envoyer le ballon pour marquer des points ?"
+},
+{
+personnage: "Un arbitre",
+indice: "Qui fait respecter les règles du jeu sur le terrain ?"
+},
+{
+personnage: "Un carton jaune",
+indice: "Qu'est-ce qui avertit un joueur pour une faute ?"
+},
+{
+personnage: "Un carton rouge",
+indice: "Qu'est-ce qui exclut un joueur du terrain ?"
+},
+{
+personnage: "Un coup franc",
+indice: "Quelle occasion de frappe au but obtient-on après une faute ?"
+},
+{
+personnage: "Un penalty",
+indice: "Comment appelle-t-on un tir au but depuis un point précis ?"
+},
+{
+personnage: "Un corner",
+indice: "Comment nomme-t-on le coup de pied depuis le coin du terrain ?"
+},
+{
+personnage: "Un tacle",
+indice: "Quelle action vise à prendre le ballon à l'adversaire ?"
+},
+{
+personnage: "Un hors-jeu",
+indice: "Quelle position illégale peut annuler une action d'attaque ?"
+},
+{
+personnage: "Un attaquant",
+indice: "Quel joueur a pour mission de marquer des buts ?"
+},
+{
+personnage: "Un défenseur",
+indice: "Quel joueur a pour mission d'empêcher l'adversaire de marquer ?"
+},
+{
+personnage: "Un milieu de terrain",
+indice: "Quel joueur connecte l'attaque et la défense ?"
+},
+{
+personnage: "Un gardien de but",
+indice: "Qui protège le but de son équipe ?"
+},
+{
+personnage: "Un entraîneur",
+indice: "Qui dirige et motive l'équipe ?"
+},
+{
+personnage: "Un stade",
+indice: "Où se déroulent les matchs de football ?"
+},
+{
+personnage: "Une équipe",
+indice: "Comment appelle-t-on un groupe de joueurs qui jouent ensemble ?"
+},
+{
+personnage: "Un supporter",
+indice: "Qui encourage une équipe pendant un match ?"
+},
+{
+personnage: "Un maillot",
+indice: "Quel vêtement portent les joueurs sur le terrain ?"
+},
+{
+personnage: "Un short",
+indice: "Quel vêtement complète le maillot ?"
+},
+{
+personnage: "Des chaussures de foot",
+indice: "Quel équipement spécial porte-t-on aux pieds pour jouer ?"
+},
+{
+personnage: "Des chaussettes de foot",
+indice: "Que porte-t-on avec les chaussures pour protéger les jambes ?"
+},
+{
+personnage: "Un protège-tibias",
+indice: "Quel accessoire protège les tibias des chocs ?"
+},
+{
+personnage: "Un coup de tête",
+indice: "Comment frappe-t-on le ballon avec la tête ?"
+},
+{
+personnage: "Une passe",
+indice: "Comment appelle-t-on l'action d'envoyer le ballon à un coéquipier ?"
+},
+{
+personnage: "Un dribble",
+indice: "Comment contourne-t-on un adversaire avec le ballon aux pieds ?"
+},
+{
+personnage: "Un contrôle de balle",
+indice: "Comment maîtrise-t-on le ballon pour préparer une action ?"
+},
+{
+personnage: "Une transversale",
+indice: "Comment s'appelle la barre horizontale du but ?"
+},
+{
+personnage: "Un poteau",
+indice: "Comment s'appelle la barre verticale du but ?"
+},
+{
+personnage: "La surface de réparation",
+indice: "Dans quelle zone le gardien peut-il utiliser ses mains ?"
+},
+{
+personnage: "Le rond central",
+indice: "Où se situe le point de départ du match et des remises en jeu ?"
+},
+{
+personnage: "Un corner court",
+indice: "Comment nomme-t-on un corner joué à un coéquipier proche ?"
+},
+{
+personnage: "Un pressing",
+indice: "Comment appelle-t-on l'action de harceler l'adversaire pour récupérer le ballon ?"
+},
+{
+personnage: "Un contre-attaque",
+indice: "Comment appelle-t-on une attaque rapide après avoir récupéré le ballon ?"
+},
+{
+personnage: "Une aile de pigeon",
+indice: "Comment frappe-t-on le ballon avec l'extérieur du pied de manière acrobatique ?"
+},
+{
+personnage: "Une roulette",
+indice: "Comment appelle-t-on la feinte qui consiste à faire tourner le ballon sous le pied ?"
+},
+{
+personnage: "Un sombrero",
+indice: "Comment lobe-t-on le ballon au-dessus d'un adversaire avec un geste technique ?"
+},
+{
+personnage: "Le hors-jeu tactique",
+indice: "Quelle stratégie piège les attaquants adverses en les mettant en position illégale ?"
+},
+{
+personnage: "Un match nul",
+indice: "Que se passe-t-il lorsque les deux équipes ont le même score à la fin du temps réglementaire ?"
+},
+{
+personnage: "Une prolongation",
+indice: "Que se passe-t-il après un match nul pour déterminer un vainqueur ?"
+},
+{
+personnage: "Une séance de tirs au but",
+indice: "Comment départage-t-on les équipes après une prolongation sans but ?"
+},
+{
+personnage: "Un doublé",
+indice: "Comment qualifie-t-on un joueur qui marque deux buts dans un match ?"
+},
+{
+personnage: "Un triplé",
+indice: "Comment appelle-t-on un joueur qui marque trois buts dans un match ?"
+},
+{
+personnage: "Un quadruplé",
+indice: "Comment nomme-t-on la performance de marquer quatre buts dans un match ?"
+},
+{
+personnage: "Un quintuplé",
+indice: "Comment qualifie-t-on l'exploit de marquer cinq buts dans un match ?"
+},
+{
+personnage: "Un but contre son camp",
+indice: "Que se passe-t-il quand un joueur marque dans son propre but ?"
+},
+{
+personnage: "La FIFA",
+indice: "Quelle organisation gère le football au niveau mondial ?"
+},
+{
+personnage: "L'UEFA",
+indice: "Quelle organisation gère le football en Europe ?"
+},
+{
+personnage: "La Ligue des Champions",
+indice: "Quelle compétition de clubs réunit les meilleures équipes européennes ?"
+},
+{
+personnage: "L'Europa League",
+indice: "Quelle est l'autre compétition européenne de clubs, après la Ligue des Champions ?"
+},
+{
+personnage: "La Coupe du Monde",
+indice: "Quelle compétition internationale met en compétition les nations ?"
+},
+{
+personnage: "L'Euro",
+indice: "Comment appelle-t-on le championnat d'Europe des nations ?"
+},
+{
+personnage: "Le Ballon d'Or",
+indice: "Quelle récompense individuelle est attribuée au meilleur joueur du monde ?"
+},
+{
+personnage: "Le mercato",
+indice: "Comment appelle-t-on la période des transferts de joueurs ?"
+},
+{
+personnage: "Un agent de joueurs",
+indice: "Qui représente et négocie les contrats des joueurs ?"
+},
+{
+personnage: "Un sponsor",
+indice: "Qui finance une équipe ou un événement sportif en échange de visibilité ?"
+},
+{
+personnage: "Le fair-play financier",
+indice: "Quelles règles encadrent les dépenses des clubs pour éviter les dettes ?"
+},
+{
+personnage: "Un hooligan",
+indice: "Comment nomme-t-on un supporter violent ?"
+},
+{
+personnage: "Une blessure",
+indice: "Qu'est-ce qui peut empêcher un joueur de participer à un match ?"
+},
+{
+personnage: "Un échauffement",
+indice: "Que font les joueurs pour se préparer physiquement avant un match ?"
+},
+{
+personnage: "Le temps additionnel",
+indice: "Qu'est-ce qui est ajouté à la fin de chaque mi-temps pour compenser les arrêts de jeu ?"
+},
+{
+personnage: "La VAR",
+indice: "Quelle technologie aide l'arbitre à prendre des décisions justes ?"
+},
+{
+personnage: "Le gazon",
+indice: "Quelle est la surface de jeu sur laquelle se déroule le match ?"
+},
+{
+personnage: "Les vestiaires",
+indice: "Où se préparent les joueurs avant d'entrer sur le terrain ?"
+},
+{
+personnage: "Les tribunes",
+indice: "Où s'assoient les spectateurs pour regarder le match ?"
+},
+{
+personnage: "Les commentateurs",
+indice: "Qui décrit le match à la télévision ou à la radio ?"
+},
+{
+personnage: "Les analyses d'après-match",
+indice: "De quoi parle-t-on après la fin d'un match ?"
+},
+{
+personnage: "Le football total",
+indice: "Quelle philosophie de jeu implique tous les joueurs en attaque et en défense ?"
+},
+{
+personnage: "Le catenaccio",
+indice: "Comment appelle-t-on la tactique défensive italienne très rigoureuse ?"
+},
+{
+personnage: "Le tiki-taka",
+indice: "Quel style de jeu se base sur une possession du ballon maximale ?"
+},
+{
+personnage: "Un centre",
+indice: "Comment appelle-t-on une passe en hauteur vers la surface de réparation ?"
+},
+{
+personnage: "Un face à face",
+indice: "Que se passe-t-il quand un attaquant se retrouve seul devant le gardien ?"
+},
+{
+personnage: "Un lob",
+indice: "Comment appelle-t-on la frappe qui passe au-dessus du gardien ?"
+},
+{
+personnage: "Une bicyclette",
+indice: "Comment nomme-t-on le geste acrobatique où le joueur frappe le ballon en l'air ?"
+},
+{
+personnage: "Un contrôle orienté",
+indice: "Comment contrôle-t-on le ballon en se dirigeant vers le but ?"
+},
+{
+personnage: "Une simulation",
+indice: "Que fait un joueur qui essaie de faire croire à une faute ?"
+},
+{
+personnage: "Le chambrage",
+indice: "Comment appelle-t-on les provocations envers l'adversaire ?"
+},
+{
+personnage: "L'esprit d'équipe",
+indice: "Comment appelle-t-on la solidarité et la cohésion entre les joueurs ?"
+},
+{
+personnage: "La passion",
+indice: "Quel sentiment anime les joueurs et les supporters pour le football ?"
+},
+{
+personnage: "Le respect",
+indice: "Quelle valeur est essentielle entre les joueurs, les arbitres et les supporters ?"
+},
+{
+personnage: "Le rêve",
+indice: "Qu'est-ce qui motive les joueurs à se surpasser et à viser la victoire ?"
+}
 ]
+
     let footActuelle;
     function nouveauFoot() {
         let indexAleatoire = Math.floor(Math.random()* foot.length)
@@ -383,7 +447,6 @@ personnage: "32"
            resultat.textContent=`Tu devrais arrêter les foots `
            resultat.style.color="red"
            score.textContent= `Points : ${scoreTo}`
-         nouveauFoot();
        }
        reponse.value="";
    } 

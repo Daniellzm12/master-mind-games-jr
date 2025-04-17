@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -95,300 +95,336 @@
         <script>
             let scoreTotal =0;
             let devinette = [
-                {
-                   indice:"Je suis plein de trous, mais je peux retenir l'eau. Qui suis-je ?",
- personnage:"Une éponge"
-                },
-                {
-                 indice:"Je suis toujours en mouvement, mais je reste toujours au même endroit. Qui suis-je ?",
-personnage:"Une rivière"   
-                },
-                {
-                 indice:"Je suis souvent pris, mais jamais rendu.Qui suis-je ?",
-    personnage:"Le temps"
-                },
-               {
-            indice:"Je n'ai pas de bouche, mais je mange. Je n'ai pas de nez, mais je respire. Qui suis-je ?",
-     personnage:"Une plante"
-     },
-     {
-     indice:"Je n'ai pas de voix, mais je raconte des histoires. Je n'ai pas d'yeux, mais je vous fais voyager.Qui suis-je ?",
-     personnage:"Un livre"
-     },
-     {
-        indice:"Je n'ai pas d'ailes, mais je peux voler. Je n'ai pas de jambes, mais je peux courir.Q ui suis-je ?",
-        personnage:"Le temps"
-     },
-     {
-        indice:"Je suis invisible, mais je suis partout. Je suis nécessaire à la vie, mais on ne peut pas me voir.Qui suis-je ?",
-     personnage:"L'air"
-     },
-     {
-         indice:"Je suis né dans l'eau, mais je meurs au contact de l'eau.Qui suis-je ?",
-personnage:"Le feu"
-     },
-     {
-       
-indice:"Je peux être brisé sans être tenu. Qui suis-je ?",
-    personnage:"Une promesse"  
-     },
-     {
-       indice:"Je suis dur comme la pierre, mais je peux flotter sur l'eau. Qui suis-je ?",
-personnage:"La glace"   
-     },
-     {
-         indice:"Je suis rempli, mais je peux encore contenir plus. Qui suis-je ?",
-personnage:"Un esprit"
-     },
-     {
-         indice:"J'ai des dents, mais je ne mange pas. Qui suis-je ?",
- personnage:"Un peigne"
-
-     },
-     {
-       indice:"Je suis toujours devant vous, mais vous ne pouvez pas me voir. Qui suis-je ?",
-       personnage:"L'avenir"  
-     },
-     {
-       indice:"Je suis un roi, mais je n'ai pas de royaume, ni de couronne. Qui suis-je ?",
-personnage:"Un jeu d'échecs"  
-     },
-     {
-       indice:"Je suis une ville, mais je n'ai pas de maisons, de bâtiments ou de personnes. Qui suis-je ?",
-personnage:"Un jeu de société"  
-     },
-     {
-       indice:"Je n'ai pas de corps, mais j'ai une voix. Je peux vous parler, mais vous ne pouvez pas me toucher. Qui suis-je ?",
-personnage:"Un écho"  
-     },
-     {
-     indice:"Je suis plus grand que l'océan, mais je ne pèse rien. Qui suis-je ?",
-    personnage:"Le ciel"    
-     },
-     {
-      indice:"Je suis ce que vous cherchez, mais quand vous me trouvez, je disparais. Qui suis-je ?",
-  personnage:"La réponse"
-   
-     },
-     {
-       indice:"Je peux voyager autour du monde en restant dans mon coin.Qui suis-je ?",
-       personnage:"Un timbre"
-     },
-     {
-        indice:"Je suis plus grand quand on m'enlève des morceaux.Qui suis-je ?",
-        personnage:"Un trou"
-     },
-     {
-             indice:"Je suis toujours en train de venir, mais je n'arrive jamais. Qui suis-je ?",
-        personnage:"Demain"
-     } 
-     ,{
-    indice: "Je suis une entité insaisissable, constamment présente devant vous, mais paradoxalement hors de votre portée visuelle. Qui suis-je ?",
-    personnage: "Futur"
-  },
-  {
-    indice: "Je manifeste une expansion de ma propre existence à chaque suppression d'une partie intégrante de moi-même, défiant ainsi la logique conventionnelle. Qui suis-je ?",
-    personnage: "Trou"
-  },
-  {
-    indice: "Je possède des représentations cartographiques de centres urbains sans abriter de structures résidentielles, des reproductions de zones forestières sans la présence d'arbres, et des étendues d'eau sans la vie aquatique. Qui suis-je ?",
-    personnage: "Carte"
-  },
-  {
-    indice: "Mon origine résulte d'une réaction exothermique intense, mais ma vulnérabilité face à la  molécule d'eau me condamne à une disparition certaine. Qui suis-je ?",
-    personnage: "Cendre"
-  },
-  {
-    indice: "Je suis une entité capable d'une vacuité totale, tout en conservant la potentialité d'une plénitude absolue, offrant sans cesse des opportunités sans jamais rien céder de concret. Qui suis-je ?",
-    personnage: "Coeur"
-  },
-  {
-    indice: "Je suis doté d'appendices rigides et pointus, similaires à des organes masticatoires, mais je suis incapable de consommer la moindre substance nutritive. Qui suis-je ?",
-    personnage: "Peigne"
-  },
-  {
-    indice: "Je suis un produit de la nature, apparenté aux espèces fruitières, mais je déroge à la règle en ne succombant jamais à l'attraction gravitationnelle pour me détacher de la source nourricière. Qui suis-je ?",
-    personnage: "Pomme"
-  },
-  {
-    indice: "Bien que je partage une classification commune avec les créatures aviaires, je suis dépourvu de la capacité inhérente à m'élever dans les airs par la force de mes  propres ailes. Qui suis-je ?",
-    personnage: "Kiwi"
-  },
-  {
-    indice: "Je suis une agglomération urbaine en perpétuel déplacement, défiant la notion de sédentarité et de fixité géographique. Qui suis-je ?",
-    personnage: "Tapis"
-  },
-  {
-    indice: "Je suis un élément chimique de transition, souvent invisible à l'œil nu, mais pourtant essentiel au transport de l'oxygène dans les organismes vivants. Qui suis-je ?",
-    personnage: "Fer"
-  },
-  {
-    indice: "Je suis une sensation visuelle, résultant de la combinaison de toutes les longueurs d'onde du spectre lumineux, paradoxalement absent lorsque la lumière est à son apogée. Qui suis-je ?",
-    personnage: "Blanc"
-  },
-  {
-    indice: "Je représente l'absence de quantité, un concept abstrait qui, malgré son insignifiance apparente, est indispensable à la compréhension des mathématiques. Qui suis-je ?",
-    personnage: "Zéro"
-  },
-  {
-    indice: "Je suis une préparation liquide, consommée pour ses vertus réconfortantes et apaisantes, bien que je sois dépourvue de toute consistance liquide au sens strict du terme. Qui suis-je ?",
-    personnage: "Tisane"
-  },
-  {
-    indice: "Je suis un instrument de musique, reconnaissable à sa forme et à sa disposition des touches, mais incapable de produire la moindre mélodie ou le moindre son audible. Qui suis-je ?",
-    personnage: "Piano"
-  },
-  {
-    indice: "Je suis une pièce d'habillement, conçue pour orner et embellir un objet particulier, mais impropre à être portée par un être humain. Qui suis-je ?",
-    personnage: "Jupe"
-  },
-  {
-    indice: "Je suis un organisme aquatique, évoluant dans les profondeurs des océans et des rivières, mais incapable de survivre sur la terre ferme. Qui suis-je ?",
-    personnage: "Poisson"
-  },
-  {
-    indice: "Je suis une création florale, prisée pour sa beauté et son parfum délicat, mais ne poussant jamais de manière naturelle dans les jardins ou les champs. Qui suis-je ?",
-    personnage: "Pensée"
-  },
-  {
-    indice: "Je suis un recueil d'informations, organisé de manière méthodique et alphabétique, mais dépourvu de pages physiques à consulter. Qui suis-je ?",
-    personnage: "Annuaire"
-  },
-  {
-    indice: "Je suis une construction naturelle, souvent associée à un abri ou un lieu de refuge, mais dépourvue de parois protectrices pour assurer la sécurité de ses occupants. Qui suis-je ?",
-    personnage: "Champignon"
-  },
-  {
-    indice: "Je représente la filiation et la descendance d'une famille, illustrant les liens entre les différentes générations, mais ne produisant aucun fruit comestible ou tangible. Qui suis-je ?",
-    personnage: "Généalogie"
-  },
-  {
-    indice: "Je suis un corps céleste, arborant une forme étoilée distinctive, mais incapable d'émettre la moindre lueur dans l'obscurité céleste. Qui suis-je ?",
-    personnage: "Étoile"
-  },
-  {
-    indice: "Je représente une contrée imaginaire, souvent évoquée dans les contes et les légendes, mais absente des cartes géographiques et des atlas du monde réel. Qui suis-je ?",
-    personnage: "Imaginaire"
-  },
-  {
-    indice: "Je suis une formation géologique imposante, culminant à des altitudes élevées, mais dépourvue de la composition minérale et rocheuse typique des chaînes de montagnes terrestres. Qui suis-je ?",
-    personnage: "Russe"
-  },
-  {
-    indice: "Je suis un cours d'eau précieux et étincelant, constitué de gemmes et de minéraux rares, mais ne se déversant jamais dans les vastes étendues marines. Qui suis-je ?",
-    personnage: "Diamants"
-  },
-  {
-    indice: "Je représente une vaste collection de données numériques, interconnectées et en constante évolution, mais dépourvue de la salinité caractéristique des océans terrestres. Qui suis-je ?",
-    personnage: "Données"
-  },
-  {
-    indice: "Je suis une étendue aride et glacée, caractérisée par des températures extrêmes et un paysage désolé, mais dépourvue du sable et de la chaleur torride des déserts traditionnels. Qui suis-je ?",
-    personnage: "Glace"
-  },
-  { indice: "Je suis une zone boisée, dense et luxuriante, mais constituée de matériaux artificiels et de structures urbaines, plutôt que de la végétation verdoyante habituelle. Qui suis-je ?",
-    personnage: "Béton"
-  },
-  {
-    indice: "Je suis un territoire isolé, entouré d'un espace vide et désertique, dépourvu des eaux océaniques qui délimitent habituellement les îles. Qui suis-je ?",
-    personnage: "Déserte"
-  },
-  {
-    indice: "Je suis une étendue d'eau stagnante, créée artificiellement pour des besoins spécifiques, mais manquant de la profondeur et de la faune aquatique que l'on trouve dans les lacs naturels. Qui suis-je ?",
-    personnage: "Artificiel"
-  },
-  {
-    indice: "Je suis une surface plane, aménagée pour le divertissement et les activités récréatives, mais dépourvue de la régularité et de l'uniformité que l'on associe aux plaines agricoles ou naturelles. Qui suis-je ?",
-    personnage: "Jeux"
-  },
-  {
-    indice: "Je suis un ensemble de constructions miniatures, reproduisant l'architecture et l'ambiance d'un lieu habité, mais dépourvu de la présence humaine et de l'activité quotidienne que l'on trouve dans les villages réels. Qui suis-je ?",
-    personnage: "Noël"
-  },
-  {
-    indice: "Je suis un chemin tracé, offrant une direction et une destination, mais se terminant abruptement sans mener à un lieu précis ou à un carrefour important. Qui suis-je ?",
-    personnage: "Impasse"
-  },
-  {
-    indice: "Je suis une structure suspendue, reliant deux points distincts, mais incapable de supporter le poids ou le passage de personnes ou de véhicules. Qui suis-je ?",
-    personnage: "Singe"
-  },
-  {
-    indice: "Je suis un passage souterrain, creusé à travers une masse de terre ou de roche, mais ne permettant pas de franchir un obstacle ou de relier deux points distants. Qui suis-je ?",
-    personnage: "Lave"
-  },
-  {
-    indice: "Je suis un dispositif de fermeture, conçu pour interdire l'accès et protéger un espace, mais infranchissable et impossible à ouvrir, même avec la force ou les outils appropriés. Qui suis-je ?",
-    personnage: "Blindée"
-  },
-  {
-    indice: "Je suis une ouverture dans un mur, offrant une perspective sur l'extérieur, mais ne donnant pas accès à la lumière naturelle ou au paysage environnant. Qui suis-je ?",
-    personnage: "Écran"
-  },
-  {
-    indice: "Je suis une structure verticale, servant à délimiter un espace ou à séparer des zones, mais incapable d'offrir une protection contre les intrusions ou les éléments naturels. Qui suis-je ?",
-    personnage: "Escalade"
-  },
-  {
-    indice: "Je suis une surface horizontale, recouvrant un bâtiment ou une construction, mais servant uniquement de support pour la végétation et les plantes, sans offrir d'abri contre les intempéries. Qui suis-je ?",
-    personnage: "Végétal"
-  },
-  {
-    indice: "Je représente la base et le support d'une construction, assurant sa stabilité et sa solidité, mais étant elle-même artificielle et dépourvue des propriétés structurelles nécessaires pour soutenir un édifice. Qui suis-je ?",
-    personnage: "Teint"
-  },
-  {
-    indice: "Je suis une structure permettant de passer d'un niveau à un autre, facilitant l'accès aux étages supérieurs, mais conçue uniquement pour une évacuation d'urgence et non pour un usage quotidien. Qui suis-je ?",
-    personnage: "Secours"
-  },
-  {
-    indice: "Je suis un appareil mécanique, permettant de déplacer des charges ou des personnes verticalement, mais conçu uniquement pour des opérations de manutention et non pour le transport de passagers. Qui suis-je ?",
-    personnage: "Monte"
-  },
-  {
-    indice: "Je suis une plateforme en saillie, offrant un espace extérieur supplémentaire à un bâtiment, mais ne donnant pas sur un paysage ouvert ou une vue panoramique. Qui suis-je ?",
-    personnage: "Français"
-  },
-  {
-    indice: "Je suis une construction verticale, servant à évacuer les fumées et les gaz de combustion, mais fonctionnant à l'électricité et ne produisant aucune émission polluante. Qui suis-je ?",
-    personnage: "Électrique"
-  },
-  {
-    indice: "Je représente un espace verdoyant, aménagé pour la culture et l'agrément, mais constitué uniquement de gravier, de roches et de sable, sans la présence de plantes ou de fleurs. Qui suis-je ?",
-    personnage: "Sec"
-  },
-  {
-    indice: "Je suis un bassin artificiel, rempli de sphères colorées et légères, offrant un espace de jeu et de divertissement, mais dépourvu de l'eau et des activités aquatiques que l'on trouve dans les piscines traditionnelles. Qui suis-je ?",
-    personnage: "Balles"
-  },
-  {
-    indice: "Je suis une zone dédiée aux activités ludiques et récréatives, aménagée avec des équipements et des structures spécifiques, mais fréquentée uniquement par des avatars virtuels et non par des enfants réels. Qui suis-je ?",
-    personnage: "Virtuel"
-  },
-  {
-    indice: "Je suis un espace réservé au stationnement des véhicules à moteur, mais occupé uniquement par des bicyclettes et des engins de déplacement doux. Qui suis-je ?",
-    personnage: "Vélos"
-  },
-  {
-    indice: "Je suis un établissement de divertissement, projetant des œuvres cinématographiques sur un écran géant, mais situé en plein air et dépourvu de la structure et du confort des salles obscures traditionnelles. Qui suis-je ?",
-    personnage: "Plein air"
-  },
-  {
-    indice: "Je suis une institution culturelle, exposant des reproductions fidèles de personnalités historiques et contemporaines, mais dépourvue des œuvres d'art originales et des objets authentiques que l'on trouve dans les musées classiques. Qui suis-je ?",
-    personnage: "Grévin"
-  },
-  {
-    indice: "Je représente un établissement d'enseignement, dispensant des connaissances et des compétences, mais regroupant uniquement des concepts abstraits et des théories intellectuelles, sans la présence d'élèves ou d'enseignants. Qui suis-je ?",
-    personnage: "Pensée"
-  }
+{
+personnage: "Un nuage",
+indice: "Je flotte dans le ciel et peux apporter la pluie. Qui suis-je ?"
+},
+{
+personnage: "Un livre",
+indice: "Je contiens des histoires et des informations. Qui suis-je ?"
+},
+{
+personnage: "Une clé",
+indice: "Je sers à ouvrir une porte. Qui suis-je ?"
+},
+{
+personnage: "Un diamant",
+indice: "Je suis une pierre précieuse très dure et brillante. Qui suis-je ?"
+},
+{
+personnage: "Un café",
+indice: "Je suis une boisson chaude stimulante. Qui suis-je ?"
+},
+{
+personnage: "Un hamster",
+indice: "Je suis un petit rongeur de compagnie. Qui suis-je ?"
+},
+{
+personnage: "Le vert",
+indice: "Je suis la couleur de l'herbe et des feuilles. Qui suis-je ?"
+},
+{
+personnage: "Un parapluie",
+indice: "Je protège de la pluie. Qui suis-je ?"
+},
+{
+personnage: "Une flûte",
+indice: "Je suis un instrument à vent que l'on souffle. Qui suis-je ?"
+},
+{
+personnage: "Un champignon",
+indice: "Je pousse dans la forêt et certains sont comestibles. Qui suis-je ?"
+},
+{
+personnage: "Un serpent",
+indice: "Je rampe et n'ai pas de pattes. Qui suis-je ?"
+},
+{
+personnage: "Un hexagone",
+indice: "J'ai six côtés. Qui suis-je ?"
+},
+{
+personnage: "Un musée",
+indice: "On y expose des œuvres d'art et des objets historiques. Qui suis-je ?"
+},
+{
+personnage: "Le printemps",
+indice: "Je suis la saison du renouveau. Qui suis-je ?"
+},
+{
+personnage: "Une framboise",
+indice: "Je suis une petite baie rouge sucrée. Qui suis-je ?"
+},
+{
+personnage: "Un bus",
+indice: "Je transporte beaucoup de passagers en ville. Qui suis-je ?"
+},
+{
+personnage: "Un sorbet",
+indice: "Je suis un dessert glacé à base de fruits. Qui suis-je ?"
+},
+{
+personnage: "Un renard",
+indice: "Je suis un animal rusé à la fourrure rousse. Qui suis-je ?"
+},
+{
+personnage: "Un coquelicot",
+indice: "Je suis une fleur rouge des champs. Qui suis-je ?"
+},
+{
+personnage: "Un taille-crayon",
+indice: "Je sers à aiguiser les crayons. Qui suis-je ?"
+},
+{
+personnage: "Un salon",
+indice: "C'est la pièce où l'on reçoit les invités. Qui suis-je ?"
+},
+{
+personnage: "Un kiwi",
+indice: "Je suis un fruit vert à la peau brune et duveteuse. Qui suis-je ?"
+},
+{
+personnage: "Un mouton",
+indice: "Je vis dans les champs et donne de la laine. Qui suis-je ?"
+},
+{
+personnage: "Un miroir",
+indice: "Je reflète l'image. Qui suis-je ?"
+},
+{
+personnage: "Un hibou",
+indice: "Je suis un oiseau de nuit avec de grands yeux. Qui suis-je ?"
+},
+{
+personnage: "Une courgette",
+indice: "Je suis un légume vert d'été. Qui suis-je ?"
+},
+{
+personnage: "Le patinage",
+indice: "C'est un sport de glisse sur glace ou sur roues. Qui suis-je ?"
+},
+{
+personnage: "Une groseille",
+indice: "Je suis une petite baie rouge acidulée. Qui suis-je ?"
+},
+{
+personnage: "Un scooter",
+indice: "Je suis un deux-roues motorisé plus petit qu'une moto. Qui suis-je ?"
+},
+{
+personnage: "Un thé glacé",
+indice: "C'est une boisson rafraîchissante à base de thé. Qui suis-je ?"
+},
+{
+personnage: "Une pharmacie",
+indice: "On y vend des médicaments. Qui suis-je ?"
+},
+{
+personnage: "Un losange",
+indice: "J'ai quatre côtés égaux et des angles opposés égaux. Qui suis-je ?"
+},
+{
+personnage: "Un gant",
+indice: "Je protège les mains du froid. Qui suis-je ?"
+},
+{
+personnage: "Un abricot",
+indice: "Je suis un fruit orange avec un noyau. Qui suis-je ?"
+},
+{
+personnage: "Un écureuil",
+indice: "Je suis un rongeur agile qui aime les noisettes. Qui suis-je ?"
+},
+{
+personnage: "Une gomme",
+indice: "Je sers à effacer ce qui est écrit au crayon. Qui suis-je ?"
+},
+{
+personnage: "Une boucherie",
+indice: "On y vend de la viande. Qui suis-je ?"
+},
+{
+personnage: "Un short",
+indice: "Je suis un vêtement court pour les jambes. Qui suis-je ?"
+},
+{
+personnage:"Le violet",
+indice: "Je suis un mélange de rouge et de bleu. Qui suis-je ?"
+},
+{
+personnage: "Un hélicoptère",
+indice: "Je vole grâce à un rotor. Qui suis-je ?"
+},
+{
+personnage: "Les pâtes",
+indice: "Je suis un aliment de base italien fait à partir de blé dur. Qui suis-je ?"
+},
+{
+personnage: "Un lynx",
+indice: "Je suis un félin sauvage aux oreilles pointues. Qui suis-je ?"
+},
+{
+personnage: "Un étang",
+indice: "C'est une petite étendue d'eau douce. Qui suis-je ?"
+},
+{
+personnage: "Les fêtes de fin d'année",
+indice: "Ce sont les célébrations de Noël et du Nouvel An. Qui suis-je ?"
+},
+{
+personnage: "Une algue",
+indice: "Je vis dans l'eau et suis souvent verte. Qui suis-je ?"
+},
+{
+personnage: "Un fouet",
+indice: "C'est un ustensile de cuisine pour battre les œufs ou la crème. Qui suis-je ?"
+},
+{
+personnage: "Une mûre",
+indice: "Je suis une petite baie noire qui pousse sur une ronce. Qui suis-je ?"
+},
+{
+personnage: "Un planeur",
+indice: "Je vole sans moteur. Qui suis-je ?"
+},
+{
+personnage: "Une clarinette",
+indice: "C'est un instrument de musique à vent en bois. Qui suis-je ?"
+},
+{
+personnage: "Un cidre",
+indice: "C'est une boisson à base de pommes fermentées. Qui suis-je ?"
+},
+{
+personnage: "Un terrain de sport",
+indice: "C'est un endroit où l'on pratique des activités physiques. Qui suis-je ?"
+},
+{
+personnage: "Un volcan",
+indice: "Je suis une montagne qui crache du feu. Qui suis-je ?"
+},
+{
+personnage: "Un cactus",
+indice: "Je suis une plante du désert avec des épines. Qui suis-je ?"
+},
+{
+personnage: "Un panier.",
+indice: "Je sers à transporter des objets. Qui suis-je ?"
+},
+{
+personnage: "Un pingouin.",
+indice: "Je suis un oiseau qui ne vole pas et qui vit dans l'Antarctique. Qui suis-je ?"
+},
+{
+personnage: "Un microscope.",
+indice: "Je permets de voir les choses très petites. Qui suis-je ?"
+},
+{
+personnage: "Un parc d'attractions.",
+indice: "C'est un endroit où l'on trouve des manèges et des jeux. Qui suis-je ?"
+},
+{
+personnage: "Une tornade.",
+indice: "Je suis une colonne d'air tourbillonnante très violente. Qui suis-je ?"
+},
+{
+personnage: "Une luge.",
+indice: "Je sers à glisser sur la neige. Qui suis-je ?"
+},
+{
+personnage: "Un phare.",
+indice: "Je guide les bateaux la nuit. Qui suis-je ?"
+},
+{
+personnage: "Une orangeade.",
+indice: "C'est une boisson à base de jus d'orange et d'eau gazeuse. Qui suis-je ?"
+},
+{
+personnage: "Un aigle.",
+indice: "Je suis un oiseau rapace avec une vue perçante. Qui suis-je ?"
+},
+{
+personnage: "Un télescope.",
+indice: "Je permets d'observer les étoiles et les planètes. Qui suis-je ?"
+},
+{
+personnage: "Un zoo.",
+indice: "On y présente des animaux du monde entier. Qui suis-je ?"
+},
+{
+personnage: "Une avalanche.",
+indice: "Je suis une masse de neige qui dévale une montagne. Qui suis-je ?"
+},
+{
+personnage: "Un patin à glace.",
+indice: "Je permets de glisser sur la glace. Qui suis-je ?"
+},
+{
+personnage: "Un moulin à vent.",
+indice: "J'utilise le vent pour produire de l'énergie ou moudre du  grain. Qui suis-je ?"
+},
+{
+personnage: "Un chocolat chaud.",
+indice: "Je suis une boisson réconfortante à base de cacao. Qui suis-je ?"
+},
+{
+personnage: "Un koala.",
+indice: "Je suis un mammifère marsupial qui vit en Australie et mange des feuilles d'eucalyptus. Qui suis-je ?"
+},
+{
+personnage: "Un gant de toilette.",
+indice: "Je sers à se laver le corps. Qui suis-je ?"
+},
+{
+personnage: "Un verger.",
+indice: "C'est un lieu planté d'arbres fruitiers. Qui suis-je ?"
+},
+{
+personnage: "Un arc-en-ciel.",
+indice: "J'apparais dans le ciel après la pluie et j'ai plusieurs couleurs. Qui suis-je ?"
+},
+{
+personnage: "Un violoncelle.",
+indice: "Je suis un instrument à cordes frottées plus grand qu'un violon. Qui suis-je ?"
+},
+{
+personnage: "Une limonade.",
+indice: "C'est une boisson rafraîchissante à base de citron. Qui suis-je ?"
+},
+{
+personnage: "Un stade.",
+indice: "Je suis un lieu où se déroulent des compétitions sportives avec des spectateurs. Qui suis-je ?"
+},
+{
+personnage: "Un canyon.",
+indice: "Je suis une vallée profonde et étroite creusée par une rivière. Qui suis-je ?"
+},
+{
+personnage: "Un marron.",
+indice: "Je suis le fruit du châtaignier cultivé. Qui suis-je ?"
+},
+{
+personnage: "Un sac à dos.",
+indice: "Je sers à transporter des affaires sur le dos. Qui suis-je ?"
+},
+{
+personnage: "Un toucan.",
+indice: "Je suis un oiseau tropical avec un grand bec coloré. Qui suis-je ?"
+},
+{
+personnage: "Une calculatrice.",
+indice: "Je sers à faire des opérations mathématiques. Qui suis-je ?"
+}
 ]
+                
+
 
             
             let devinetteActuelle;
             function nouvelleDevinette() {
                 let indexAleatoire = Math.floor(Math.random()* devinette.length);
                 devinetteActuelle = devinette[indexAleatoire];
-                document.getElementById("devinette").innerHTML= devinetteActuelle.indice ;
+                  document.getElementById("devinette").innerHTML= devinetteActuelle.indice ;
                 
             }
             nouvelleDevinette();
@@ -410,7 +446,7 @@ personnage:"Un écho"
                 scoreTotal -=10
   resultat.textContent = "Faux ! essaie encore"
     resultat.style.color= "red";
-    nouvelleDevinette();
+   
     point.textContent=`Points : ${scoreTotal}`
                 }
                 reponse.value= ""
@@ -432,4 +468,3 @@ personnage:"Un écho"
     
     
     
-

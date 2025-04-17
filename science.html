@@ -1,10 +1,10 @@
-   <!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
       <meta name="viewport"
     content="width=device-width,initial-scale=1.0">
-    <title>FootBall ⚽</title>
+    <title>Science 🔮</title>
     <style>
         body {
             font-family: sans-serif;
@@ -93,324 +93,334 @@
   </div>
   <script>
       let scoreTotal=0;
-      let sciences= [ {
-indice: "Quelle est la formule chimique exacte de l'eau, la substance essentielle à la vie telle que nous la connaissons?",
-personnage: "H2O"
- },
- {
-indice: "Comment appelle-t-on l'unité structurelle de base de la matière, qui conserve les propriétés chimiques de l'élément?",
-personnage: "Atome"
- },
- {
-indice: "Comment nomme-t-on la force fondamentale qui attire tous les objets ayant une masse l'un vers l'autre, responsable de notre poids?",
-personnage: "Gravité"
- },
- {
-indice: "Quel est le processus biochimique par lequel les plantes, les algues et certaines bactéries utilisent la lumière du soleil pour synthétiser des nutriments à partir de dioxyde de carbone et d'eau?",
-personnage: "Photosynthèse"
- },
- {
-indice: "Quelle est la valeur  approximative de la vitesse à laquelle la lumière se propage dans le vide, une constante fondamentale de la physique?",
-personnage: "299 792 458 m/s"
- },
- {
-indice: "Comment appelle-t-on l'organe le plus étendu du corps humain, qui agit comme une barrière protectrice contre l'environnement extérieur?",
-personnage: "Peau"
- },
- {
-indice: "Quelle est la planète de notre système solaire qui se trouve la plus proche du Soleil, une étoile autour de laquelle gravitent tous les corps de ce système?",
-personnage: "Mercure"
- },
- {
-indice: "Quel est le nom donné au seul satellite naturel permanent de la Terre, qui influence les marées et éclaire nos nuits?",
-personnage: "Lune"
- },
- {
-indice: "Quel est le nom de la plus vaste étendue d'eau salée à la surface de la Terre, qui couvre une grande partie de notre planète?",
-personnage: "Pacifique"
- },
- {
-indice: "Comment nomme-t-on le processus physique par lequel une substance passe de l'état liquide à l'état gazeux?",
-personnage: "Évaporation"
- }, 
+      let sciences= [
 {
-indice: "Comment appelle-t-on le processus inverse de l'évaporation, où une substance passe de l'état gazeux à l'état liquide?",
-personnage: "Condensation"
- },
- {
-indice: "Quel est le nom donné à la plus grande région terrestre caractérisée par un manque de précipitations, pouvant être chaude ou froide?",
-personnage: "Antarctique"
- },
- {
-indice: "Quel est le nom du cours d'eau le plus long de la planète, qui transporte un volume d'eau colossal à travers l'Amérique du Sud?",
-personnage: "Amazone"
- },
- {
-indice: "Quel est le nom du plus haut ensemble de montagnes au monde, qui abrite les sommets les plus élevés de la Terre?",
-personnage: "Himalaya"
- },
- {
-indice: "Comment nomme-t-on la théorie cosmologique dominante qui décrit l'évolution de l'univers à partir d'un état initial extrêmement chaud et dense?",
-personnage: "Big Bang"
- },
- {
-indice: "Quel nom donne-t-on à la force fondamentale qui maintient les protons et les neutrons ensemble dans le noyau atomique, surpassant la  répulsion électromagnétique?",
-personnage: "Forte"
- },
- {
-indice: "Comment appelle-t-on la transition directe d'une substance de l'état solide à l'état gazeux, sans passer par l'état liquide?",
-personnage: "Sublimation"
- },
- {
-indice: "Comment nomme-t-on le processus inverse de la sublimation, où une substance passe directement de l'état gazeux à l'état solide?",
-personnage: "Déposition"
- },
- {
-indice: "Comment désigne-t-on la région de la stratosphère terrestre qui absorbe la plupart des rayons ultraviolets nocifs du Soleil?",
-personnage: "Ozone"
- },
- {
-indice: "Comment appelle-t-on le changement de direction d'une onde, comme la lumière, lorsqu'elle passe d'un milieu à un autre?",
-personnage: "Réfraction"
- },
- {
-indice: "Comment nomme-t-on le phénomène où une onde, comme la lumière ou le son, est renvoyée par une surface?",
-personnage: "Réflexion"
- },
- {
-indice: "Quel terme décrit la manière dont les ondes se propagent en contournant les obstacles ou en se dispersant à travers les ouvertures?",
-personnage: "Diffraction"
- },
- {
-indice: "Comment désigne-t-on l'effet produit par la superposition de plusieurs ondes en un même point, pouvant entraîner une amplification ou une atténuation?",
-personnage: "Interférence"
- },
- {
-indice: "Quel principe fondamental de la physique stipule que l'énergie totale d'un système isolé reste constante au fil du temps?",
-personnage: "Conservation"
- },
- {
-indice: "Quelle loi de la thermodynamique énonce que l'entropie d'un système isolé a tendance à augmenter avec le temps?",
-personnage: "Thermodynamique"
- },
- {
-indice: "Quel est le nom de la particule élémentaire qui constitue la plus petite quantité d'énergie lumineuse et transporte le rayonnement électromagnétique?",
-personnage: "Photon"
- },
- {
-indice: "Quel est le nom de la particule élémentaire qui est un constituant fondamental de la matière et porte une charge électrique négative?",
-personnage: "Électron"
- },
- {
-indice: "Comment appelle-t-on les particules qui composent le noyau atomique, à savoir les protons et les neutrons?",
-personnage: "Proton"
- },
- {
-indice: "Quel est le nom des bosons vecteurs qui sont responsables de la transmission de la force faible, une des quatre forces fondamentales de la nature?",
-personnage: "W et Z"
- },
- {
-indice: "Comment nomme-t-on les bosons vecteurs qui sont les médiateurs de la force forte, responsable de la cohésion des quarks dans les hadrons?",
-personnage: "Gluon"
- },
- {
-indice: "Quel est le nom hypothétique du boson qui serait responsable de la transmission de la force gravitationnelle?",
-personnage: "Graviton"
- },
- {
-indice: "Comment appelle-t-on le processus par lequel un noyau atomique instable émet des particules ou de l'énergie pour atteindre un état plus stable?",
-personnage: "Radioactivité"
- },
- {
-indice: "Comment nomme-t-on le temps requis pour que la moitié des noyaux d'un échantillon radioactif se désintègrent?",
-personnage: "Désintégration"
- },
- {
-indice: "Quelle est l'unité de mesure utilisée pour quantifier l'activité d'une source radioactive?",
-personnage: "Becquerel"
- },
- {
-indice: "Comment appelle-t-on la réaction nucléaire où deux noyaux légers se combinent pour former un noyau plus lourd, libérant une grande quantité d'énergie?",
-personnage: "Fusion"
- },
- {
-indice: "Comment nomme-t-on le processus nucléaire où un noyau lourd se divise en deux ou plusieurs noyaux plus petits, libérant également de l'énergie?",
-personnage: "Fission"
- },
- {
-indice: "Comment désigne-t-on l'énergie produite lors des réactions nucléaires, qu'elles soient de fission ou de fusion?",
-personnage: "Nucléaire"
- },
- {
-indice: "Comment appelle-t-on une installation conçue pour initier et contrôler une réaction nucléaire en chaîne, souvent pour produire de la chaleur ou de l'électricité?",
-personnage: "Réacteur"
- },
- {
-indice: "Quelle est la branche de la science qui étudie les organismes vivants, leur structure, leur fonction, leur croissance, leur évolution et leur distribution?",
-personnage: "Biologie"
- },
- {
-indice: "Comment désigne-t-on l'unité fondamentale de la vie, la plus petite entité capable de réaliser toutes les fonctions vitales?",
-personnage: "Cellule"
- },
- {
-indice: "Comment nomme-t-on l'ensemble complet du matériel génétique d'un organisme, comprenant tous ses gènes et séquences d'ADN non codantes?",
-personnage: "Génome"
- },
- {
-indice: "Quelle molécule porte l'information génétique dans les cellules, codant les instructions pour la synthèse des protéines et la réplication?",
-personnage: "ADN"
- },
- {
-indice: "Comment désigne-t-on le processus par lequel une molécule d'ADN est dupliquée pour produire deux copies identiques?",
-personnage: "Réplication"
- },
- {
-indice: "Comment nomme-t-on le processus par lequel l'information contenue dans l'ADN est copiée en une molécule d'ARN messager?",
-personnage: "Transcription"
- },
- {
-indice: "Comment désigne-t-on le processus par lequel l'information génétique portée par l'ARN messager est utilisée pour assembler une chaîne d'acides aminés, formant une protéine?",
-personnage: "Traduction"
- },
- {
-indice: "Comment appelle-t-on les molécules organiques qui servent de blocs de construction pour les protéines?",
-personnage: "Acides aminés"
- },
- {
-indice: "Quelle est la science qui étudie la composition, la structure, les propriétés et les réactions de la matière?",
-personnage: "Chimie"
- },
- {
-indice: "Comment appelle-t-on le tableau qui organise les éléments chimiques en fonction de leur numéro atomique, de leur configuration électronique et de leurs propriétés chimiques récurrentes?",
-personnage: "Périodique"
- },
- {
-indice: "Quels sont les trois états physiques principaux dans lesquels la matière peut exister?",
-personnage: "Solide, liquide, gaz"
- },
- {
-indice: "Comment nomme-t-on la réaction chimique exothermique entre une substance et un oxydant, généralement l'oxygène, produisant de la chaleur et de la lumière?",
-personnage: "Combustion"
- },
- {
-indice: "Quelle échelle est utilisée pour mesurer l'acidité ou la basicité d'une solution aqueuse?",
-personnage: "pH"
- },
- {
-indice: "Comment appelle-t-on la dégradation d'un métal par une réaction chimique avec son environnement?",
-personnage: "Corrosion"
- },
- {
-indice: "Quelle est l'abréviation chimique de l'élément Sodium?",
-personnage: "Na"
- },
- {
-indice: "Quelle est l'abréviation chimique de l'élément Or?",
-personnage: "Au"
- },
- {
-indice: "Quels sont les principaux objets d'étude du télescope spatial James Webb, lancé pour observer l'univers avec une sensibilité inégalée?",
-personnage: "Galaxies"
- },
- {
-indice: "Quelle est la fonction essentielle des mitochondries, souvent appelées les centrales énergétiques de la cellule?",
-personnage: "Énergie"
- },
- {
-indice: "Quelle est la particule élémentaire qui, selon le modèle standard, est responsable de la masse des autres particules?",
-personnage: "Masse"
- },
- {
-indice: "Quel scientifique de renom a formulé la théorie de la relativité générale, qui décrit la gravité comme une courbure de l'espace-temps causée par la masse et l'énergie?",
-personnage: "Einstein"
- },
- {
-indice: "Comment décrit-on la matière hypothétique qui n'interagit pas avec la lumière, mais dont la présence est déduite par ses effets gravitationnels?",
-personnage: "Invisible"
- },
- {
-indice: "Comment décrit-on la forme d'énergie hypothétique qui accélère l'expansion de l'univers?",
-personnage: "Expansion"
- },
- {
-indice: "Quelle est la planète la plus petite de notre système solaire, connue pour ses températures extrêmes et sa surface fortement cratérisée?",
-personnage: "Mercure"
- },
- {
-indice: "Quel est le gaz le plus abondant dans l'atmosphère terrestre, essentiel à de nombreux processus biologiques et industriels?",
-personnage: "Azote"
- },
- {
-indice: "Comment décrit-on une région de l'espace-temps où la gravité est si intense que rien, pas même la lumière, ne peut s'en échapper?",
-personnage: "Gravité"
- },
- {
-indice: "Quel était le nom de la première brebis clonée avec succès à partir d'une cellule adulte?",
-personnage: "Dolly"
- },
- {
-indice: "Que signifie l'acronyme PCR, une technique de biologie moléculaire utilisée pour amplifier des segments d'ADN?",
-personnage: "Amplification ADN"
- },
- {
-indice: "Quel naturaliste britannique a développé la théorie de l'évolution par sélection naturelle, expliquant la diversité de la vie sur Terre?",
-personnage: "Darwin"
- },
- {
-indice: "Comment appelle-t-on le processus par lequel l'atmosphère terrestre retient une partie du rayonnement thermique émis par la surface de la planète, contribuant à son réchauffement?",
-personnage: "Chaleur"
- },
- {
-indice: "Que représente CRISPR-Cas9, une technologie révolutionnaire d'édition du génome qui permet de modifier l'ADN avec une grande précision?",
-personnage: "Édition génome"
- },
- {
-indice: "Quel est le plus grand volcan connu dans le système solaire, situé sur la planète Mars?",
-personnage: "Olympus"
- },
- {
-indice: "Comment appelle-t-on la propriété de certains matériaux de conduire l'électricité sans aucune résistance en dessous d'une température critique?",
-personnage: "Sans résistance"
- },
- {
-indice: "Qui est crédité de la découverte de la pénicilline, un antibiotique qui a révolutionné le traitement des infections bactériennes?",
-personnage: "Fleming"
- },
- {
-indice: "Comment s'appelait le premier satellite artificiel lancé en orbite autour de la Terre, marquant le début de l'ère spatiale?",
-personnage: "Spoutnik"
- },
- {
-indice: "Comment décrit-on une structure cylindrique de carbone à l'échelle nanométrique, dotée de propriétés mécaniques et électroniques exceptionnelles?",
-personnage: "Cylindre"
- },
- {
-indice: "Quel est le principal facteur contribuant à l'acidification des océans, qui menace la vie marine et les écosystèmes côtiers?",
-personnage: "CO2"
- },
- {
-indice: "Quel scientifique a mis au point le vaccin contre la poliomyélite, une maladie virale qui causait autrefois des paralysies invalidantes?",
-personnage: "Salk"
- },
- {
-indice: "Quel est le rôle principal des ribosomes dans la cellule, où ils sont responsables de la synthèse des protéines?",
-personnage: "Protéines"
- },
- {
-indice: "Quel est l'élément chimique le plus abondant dans l'univers, constituant la majeure partie de la matière baryonique?",
-personnage: "Hydrogène"
- },
- {
-indice: "Comment décrit-on une couche monoatomique de carbone disposée en un réseau hexagonal, possédant une résistance et une conductivité exceptionnelles?",
-personnage: "Carbone"
- },
- {
-indice: "Quel est l'endroit le plus profond des océans, situé dans la fosse des Mariannes et atteignant une profondeur abyssale?",
-personnage: "Mariannes"
- }
+personnage: "Une feuille",
+indice: "Quelle partie d'une plante effectue la photosynthèse ?"
+},
+{
+personnage: "Un mammifère",
+indice: "Quel type d'animal allaite ses petits ?"
+},
+{
+personnage: "La photosynthèse",
+indice: "Comment appelle-t-on le processus par lequel les plantes fabriquent leur nourriture ?"
+},
+{
+personnage: "Le squelette",
+indice: "Quelle structure osseuse soutient le corps humain ?"
+},
+{
+personnage: "Un insecte",
+indice: "Quel animal possède six pattes et un corps divisé en trois parties ?"
+},
+{
+personnage: "La gravité",
+indice: "Quelle force attire tous les objets vers le centre de la Terre ?"
+},
+{
+personnage: "Un reptile",
+indice: "Quel animal a la peau recouverte d'écailles et pond des œufs ?"
+},
+{
+personnage: "L'ADN",
+indice: "Quelle molécule contient le code génétique de tous les êtres vivants ?"
+},
+{
+personnage: "Une fleur",
+indice: "Quelle partie d'une plante est responsable de la reproduction ?"
+},
+{
+personnage: "Un oiseau",
+indice: "Quel animal a des plumes et pond des œufs ?"
+},
+{
+personnage: "La cellule",
+indice: "Quelle est l'unité de base de tous les organismes vivants ?"
+},
+{
+personnage: "Un poisson",
+indice: "Quel animal vit dans l'eau et respire grâce à des branchies ?"
+},
+{
+personnage: "Le système solaire",
+indice: "Comment appelle-t-on l'ensemble des planètes qui tournent autour du Soleil ?"
+},
+{
+personnage: "Un amphibien",
+indice: "Quel animal vit à la fois dans l'eau et sur terre ?"
+},
+{
+personnage: "L'évolution",
+indice: "Comment appelle-t-on le processus de changement des espèces au fil du temps ?"
+},
+{
+personnage: "Un arbre",
+indice: "Quelle plante a un tronc ligneux et des branches ?"
+},
+{
+personnage: "Un ver",
+indice: "Quel animal a un corps mou et allongé sans squelette ?"
+},
+{
+personnage: "Le cycle de l'eau",
+indice: "Comment appelle-t-on le processus de circulation de l'eau sur Terre ?"
+},
+{
+personnage: "Un prédateur",
+indice: "Quel animal chasse d'autres animaux pour se nourrir ?"
+},
+{
+personnage: "La classification",
+indice: "Comment organise-t-on les êtres vivants en groupes selon leurs caractéristiques ?"
+},
+{
+personnage: "Une baleine",
+indice: "Quel mammifère marin est le plus grand animal de la planète ?"
+},
+{
+personnage: "Un fruit",
+indice: "Quel est le résultat de la transformation d'une fleur après la fécondation ?"
+},
+{
+personnage: "Un parasite",
+indice: "Quel organisme vit aux dépens d'un autre organisme ?"
+},
+{
+personnage: "La météorologie",
+indice: "Quelle science étudie les phénomènes atmosphériques et la prévision du temps ?"
+},
+{
+personnage: "Un loup",
+indice: "Quel canidé sauvage vit en meute et chasse en groupe ?"
+},
+{
+personnage: "La génétique",
+indice: "Quelle science étudie l'hérédité et les gènes ?"
+},
+{
+personnage: "Un coquillage",
+indice: "Quel mollusque possède une coquille protectrice ?"
+},
+{
+personnage: "La tectonique des plaques",
+indice: "Quelle théorie explique la formation des montagnes et des tremblements de terre ?"
+},
+{
+personnage: "Un aigle",
+indice: "Quel rapace a une vue perçante et vole à haute altitude ?"
+},
+{
+personnage: "La chimie",
+indice: "Quelle science étudie la composition, la structure et les propriétés de la matière ?"
+},
+{
+personnage: "Un escargot",
+indice: "Quel mollusque se déplace lentement grâce à un pied musculeux et possède une coquille en spirale ?"
+},
+{
+personnage: "L'astronomie",
+indice: "Quelle science étudie les astres et l'univers ?"
+},
+{
+personnage: "Un papillon",
+indice: "Quel insecte subit une métamorphose complète, passant de la chenille à la chrysalide puis à l'adulte ?"
+},
+{
+personnage: "La physique",
+indice: "Quelle science étudie les lois fondamentales de la nature et de l'univers ?"
+},
+{
+personnage: "Un ours",
+indice: "Quel mammifère omnivore a une fourrure épaisse et hiberne en hiver ?"
+},
+{
+personnage: "La géologie",
+indice: "Quelle science étudie la composition, la structure et l'histoire de la Terre ?"
+},
+{
+personnage: "Un dauphin",
+indice: "Quel mammifère marin est connu pour son intelligence et sa capacité à communiquer ?"
+},
+{
+personnage: "La botanique",
+indice: "Quelle branche de la biologie étudie les plantes ?"
+},
+{
+personnage: "Un lion",
+indice: "Quel félin est surnommé le roi de la jungle ?"
+},
+{
+personnage: "La zoologie",
+indice: "Quelle branche de la biologie étudie les animaux ?"
+},
+{
+personnage: "Un serpent",
+indice: "Quel reptile se déplace en rampant et peut être venimeux ?"
+},
+{
+personnage: "La biologie",
+indice: "Quelle science étudie les êtres vivants et leur fonctionnement ?"
+},
+{
+personnage: "Un hibou",
+indice: "Quel oiseau nocturne est connu pour son cri distinctif et sa capacité à chasser la nuit ?"
+},
+{
+personnage: "L'écologie",
+indice: "Quelle science étudie les relations entre les êtres vivants et .. leur environnement ?"
+},
+{
+personnage: "Une étoile de mer",
+indice: "Quel échinoderme marin a généralement cinq bras et se régénère en cas de perte ?"
+},
+{
+personnage: "L'anatomie",
+indice: "Quelle science étudie la structure interne des êtres vivants ?"
+},
+{
+personnage: "Un caméléon",
+indice: "Quel reptile est capable de changer de couleur pour se camoufler ?"
+},
+{
+personnage: "La paléontologie",
+indice: "Quelle science étudie les fossiles et la vie dans le passé ?"
+},
+{
+personnage: "Un requin",
+indice: "Quel poisson cartilagineux est un prédateur marin redoutable ?"
+},
+{
+personnage: "La microbiologie",
+indice: "Quelle science étudie les micro-organismes tels que les bactéries et les virus ?"
+},
+{
+personnage: "Un éléphant",
+indice: "Quel mammifère terrestre est le plus grand animal de la planète et possède une trompe ?"
+},
+{
+personnage: "L'éthologie",
+indice: "Quelle science étudie le comportement des animaux dans leur milieu naturel ?"
+},
+{
+personnage: "Un corail",
+indice: "Quel animal marin forme des récifs colorés dans les eaux chaudes ?"
+},
+{
+personnage: "La climatologie",
+indice: "Quelle science étudie les climats et leurs variations ?"
+},
+{
+personnage: "Un panda",
+indice: "Quel mammifère herbivore se nourrit principalement de bambou et vit en Chine ?"
+},
+{
+personnage: "L'embryologie",
+indice: "Quelle science étudie le développement des embryons ?"
+},
+{
+personnage: "Une méduse",
+indice: "Quel animal marin gélatineux possède des tentacules urticants ?"
+},
+{
+personnage: "La sismologie",
+indice: "Quelle science étudie les tremblements de terre ?"
+},
+{
+personnage: "Un gorille",
+indice: "Quel primate est le plus grand des singes et vit en Afrique ?"
+},
+{
+personnage: "La biochimie",
+indice: "Quelle science étudie les réactions chimiques qui se produisent dans les êtres vivants ?"
+},
+{
+personnage: "Un manchot",
+indice: "Quel oiseau marin ne vole pas et vit dans l'Antarctique ?"
+},
+{
+personnage: "L'océanographie",
+indice: "Quelle science étudie les océans ?"
+},
+{
+personnage: "Une araignée",
+indice: "Quel arachnide possède huit pattes et tisse des toiles ?"
+},
+{
+personnage: "La volcanologie",
+indice: "Quelle science étudie les volcans ?"
+},
+{
+personnage: "Un rhinocéros",
+indice: "Quel mammifère herbivore possède une ou deux cornes sur le nez ?"
+},
+{
+personnage: "L'ornithologie",
+indice: "Quelle branche de la zoologie est consacrée à l'étude des oiseaux ?"
+},
+{
+personnage: "Un hippocampe",
+indice: "Quel poisson a une forme inhabituelle et vit dans les herbiers marins ?"
+},
+{
+personnage: "La limnologie",
+indice: "Quelle science étudie les eaux continentales (lacs, rivières, étangs) ?"
+},
+{
+personnage: "Une salamandre",
+indice: "Quel amphibien a une peau lisse et humide et ressemble à un lézard ?"
+},
+{
+personnage: "La dendrologie",
+indice: "Quelle branche de la botanique étudie les arbres ?"
+},
+{
+personnage: "Un paresseux",
+indice: "Quel mammifère se déplace très lentement et vit dans les arbres des forêts tropicales ?"
+},
+{
+personnage: "La taxonomie",
+indice: "Quelle science classe et nomme les êtres vivants ?"
+},
+{
+personnage: "Un scarabée",
+indice: "Quel insecte a une carapace dure et brillante et est souvent associé à des cultures anciennes ?"
+},
+{
+personnage: "L'ichtyologie",
+indice: "Quelle branche de la zoologie étudie les poissons ?"
+},
+{
+personnage: "Un ours polaire",
+indice: "Quel mammifère vit dans l'Arctique et est adapté au froid extrême ?"
+},
+{
+personnage: "La pathologie",
+indice: "Quelle science étudie les maladies et leurs causes ?"
+},
+{
+personnage: "Une abeille",
+indice: "Quel insecte social produit du miel et joue un rôle essentiel dans la pollinisation ?"
+},
+{
+personnage: "La pharmacologie",
+indice: "Quelle science étudie l'action des médicaments sur les organismes vivants ?"
+},
+{
+personnage: "Un lama",
+indice: "Quel mammifère est utilisé comme animal de bât et produit de la laine dans les Andes ?"
+},
+{
+personnage: "La biogéographie",
+indice: "Quelle science étudie la répartition géographique des êtres vivants ?"
+},
+{
+personnage: "Une mante religieuse",
+indice: "Quel insecte prédateur est connu pour sa posture de prière et son cannibalisme ?"
+}
 ]
-let scienceActuelle;
+      
+      let scienceActuelle;
  function nouvelleScience() {
      let indexAleatoire = Math.floor(Math.random()* sciences.length)
      scienceActuelle = sciences[indexAleatoire]
@@ -434,6 +444,7 @@ let scienceActuelle;
                  resultat.style.color='red'
                  scoreTotal -= 50
                  score.textContent=`Points : ${scoreTotal}`
+                
              }
      reponse.value= "";
  }
@@ -443,4 +454,4 @@ let scienceActuelle;
       </script>
       
       </body>
-      </html>
+      </html> 

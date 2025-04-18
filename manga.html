@@ -47,7 +47,7 @@
             font-family: Georgia,serif;
         }
         
-        button {
+        .button {
             padding: 15px;
             margin: 20px;
             background-color: #007bff;
@@ -59,7 +59,7 @@
             width: 50%;
             
         }
-        button:hover{
+        .button:hover{
             background-color: cyan;
             color: white;
         }
@@ -81,6 +81,18 @@
             font-size: 1.2em;
             
         }
+        .btn{
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: #4CAF50;
+  color: white; 
+padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px 6px;
+}
+
 
 
     </style>
@@ -90,11 +102,14 @@
    <h1>Otaku Legends 🗿</h1>   
    <i><p id="manga"></p></i>
    <input type="text" placeholder="Votre reponse Seigneur" id="reponse">
-   <button onclick="mangaka()">Réponse </button>
+   <button class="button" onclick="mangaka()">Réponse </button>
+   <button class="btn" onclick="nouveauManga()">Next➡</button>
    <p id="score" class="p">Points : 0</p>
    <p id="commentaire" ></p>
+   <p id="result"></p>
   </div>
   <script>
+      let clickCount= 0;
       let scoreTo = 0;
       let manga = 
 [
@@ -380,26 +395,36 @@ personnage: "Sasuke"
  }
 ]
     let mangaActuelle;
+    
     function nouveauManga() {
         let indexAleatoire = Math.floor(Math.random()* manga.length)
         mangaActuelle = manga[indexAleatoire]
         document.getElementById("manga").innerHTML= mangaActuelle.indice;
+        document.getElementById("score").innerHTML=`Points: ${scoreTo}`
+        scoreTo -=20
+        clickCount= 0;
          }
     nouveauManga();
     
     
    function mangaka() {
+   let result= document.getElementById("result")
        let resultat = document.getElementById("commentaire")
        let score = document.getElementById("score")
        let reponse = document.getElementById("reponse")
        let reponseUser = reponse.value.toLowerCase();
+       clickCount++
        if(reponseUser === mangaActuelle.personnage.toLowerCase()) {
-            scoreTo +=100 ;
+            scoreTo +=150 ;
             resultat.textContent="Otaku un jour Otaku toujours ! Bravo !"
             resultat.style.color='blue'
-            score.textContent=`Points : ${scoreTo}`
+            score.textContent=`Points : ${score}`
             
             nouveauManga();
+       }
+       else if(clickCount >= 3) {
+           result.textContent= mangaActuelle.personnage;
+           result.style.color='#2affff'
        }
        else {
            scoreTo -=10
@@ -409,6 +434,7 @@ personnage: "Sasuke"
            
        }
        reponse.value="";
+       result.value="";
    } 
 
 

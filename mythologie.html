@@ -14,15 +14,18 @@
             min-height: 100vh;
             background-color: white;
         }
-                                                                            
-                                        
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                                            
-        .container {
+         .btn{
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: #4CAF50;
+  color: white; 
+  padding: 10px ;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px 6px;
+}
+                                                             .container {
             text-align: center;
             padding: 30px;
             background-color: ;
@@ -47,7 +50,7 @@
             font-family: Georgia,serif;
         }
         
-        button {
+        .button {
             padding: 15px;
             margin: 20px;
             background-color: #007bff;
@@ -59,11 +62,11 @@
             width: 50%;
             
         }
-        button:hover{
+        .button:hover{
             background-color: cyan;
             color: white;
         }
-        button:active{
+        .button:active{
             background-color: blue;
         }
 .resultat {
@@ -90,12 +93,15 @@
    <h1>Mythologie 🌬</h1>   
    <p id="mythologie"></p>
    <input type="text" placeholder="Votre reponse Seigneur" id="reponse">
-   <button onclick="mytho()">Réponse </button>
+   <button class="button" onclick="mytho()">Réponse </button>
+   <button class="btn" onclick="nouvelleMythologie()">Next ➡</button>
    <p id="score" class="p">Points : 0</p>
    <p id="commentaire" ></p>
+   <p id="result"></p>
   </div>
     
     <script>
+        let clickCount =0;
         let scoreTo = 0;
         let mythologie =[
 
@@ -377,25 +383,37 @@ indice: "Qui est la déesse de la lune et des femmes dans de nombreuses cultures
      function nouvelleMythologie() {
         let indexAleatoire = Math.floor(Math.random()* mythologie.length)
    mythologieActuelle = mythologie[indexAleatoire]
-
+clickCount = 0
 document.getElementById("mythologie").innerHTML=mythologieActuelle.indice;
+clickCount =0
+document.getElementById("score").inneerHTML=`Points : ${scoreTo}`
+scoreTo -= 40
  }  
  
  nouvelleMythologie();
  
      function mytho() {
+     let result = document.getElementById("result")
          let score = document.getElementById("score")
          let reponse = document.getElementById('reponse')
          let resultat = document.getElementById("commentaire")
          let reponseUser = reponse.value.toLowerCase();
+         clickCount++
          if(reponseUser === mythologieActuelle.personnage.toLowerCase()) {
          scoreTo +=100
              resultat.textContent = "Félicitations, Tu es bien plus que zeus ⚡"
              
-             nouvelleMythologie();
+             
              score.textContent= `Points : ${scoreTo}` ;
          resultat.style.color='blue'
-         } else {
+         nouvelleMythologie();
+         } 
+         else if (clickCount >= 5) {
+             result.textContent = mythologieActuelle.personnage
+             result.style.color= '#7f98ff'
+         }
+         
+         else {
          scoreTo -=10
              resultat.textContent="Faux ! essaie encore"
              resultat.style.color ='red'

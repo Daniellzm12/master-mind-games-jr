@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
             font-family: Georgia,serif;
         }
         
-        button {
+        .button {
             padding: 15px;
             margin: 20px;
             background-color: #007bff;
@@ -51,11 +51,11 @@
             width: 50%;
             
         }
-        button:hover{
+        .button:hover{
             background-color: cyan;
             color: white;
         }
-        button:active{
+        .button:active{
             background-color: blue;
         }
 .resultat {
@@ -73,6 +73,18 @@
             font-size: 1.2em;
             
         }
+        .btn{
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: #4CAF50;
+  color: white; 
+padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px 6px;
+}
+
 
 
     </style>
@@ -82,9 +94,11 @@
    <h1>Musique 🎧</h1>   
    <i><p id="musique"></p></i>
    <input type="text" placeholder="Votre reponse joueur" id="reponse">
-   <button onclick="Musique()">Réponse </button>
+   <button class="button"onclick="Musique()">Réponse </button>
+   <button class="btn" onclick="nouvelleMusique()">Next ➡</button>
    <p id="score" class="p">Points : 0</p>
    <p id="commentaire" ></p>
+   <p id="result"></p>
   </div>
   <script>
       let scoreTotal = 0;
@@ -421,27 +435,37 @@ personnage: "Lady Gaga"
           let indexAleatoire = Math.floor(Math.random()* musique.length)
           musiqueActuelle = musique[indexAleatoire]
           document.getElementById("musique").innerHTML= musiqueActuelle.indice;
+          clickCount=0
+document.getElementById("score").innerHTML=`Points : ${scoreTotal}`
+scoreTotal -= 20
       }
       nouvelleMusique();
       
       function Musique() {
+      let result = document.getElementById("result")
           let resultat = document.getElementById("commentaire")
           let reponse = document.getElementById("reponse")
           let score = document.getElementById("score")
           let reponseUser = reponse.value.toLowerCase();
+          clickCount++
           if(reponseUser === musiqueActuelle.personnage.toLowerCase()) {
-              resultat.textContent= "Félicitations Mci" 
+              resultat.textContent= "Félicitations Mci ! la musique notre thérapie 🎧" 
               resultat.style.color='blue'
               scoreTotal +=100
               score.textContent=`Points : ${scoreTotal}`
               nouvelleMusique();
-          }else {
-          scoreTotal -=20
+          }
+          else if(clickCount >= 4 ) {
+              result.textContent = musiqueActuelle.personnage
+              result.style.color='#ff55c9'
+          }
+          else {
+          scoreTotal -= 20
               resultat.textContent="Sérieusement, achètes des casque pour mieux entendre"
               resultat.style.color='red'
               score.textContent=`Points : ${scoreTotal}`
-             nouvelleMusique();
           }
+          reponse.value = "";
       }
       
       </script>

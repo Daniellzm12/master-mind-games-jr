@@ -37,7 +37,7 @@
             
         }
         
-        button {
+        .button {
             padding: 15px;
             margin: 20px;
             background-color: #007bff;
@@ -49,7 +49,7 @@
             width: 80%;
             
         }
-        button:hover{
+        .button:hover{
             background-color: #ff6a80;
             color: white;
         }
@@ -71,19 +71,36 @@
             font-size: 1.2em;
             
         }
+        
+.btn{
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: #4CAF50;
+  color: white; 
+padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px 6px;
+}
+
 
 
 
         </style>
     </head>
     <body class="container">
+      
         <div class="container">
+            
         <h1>Qui suis-je ?🤔</h1>
         <i><p  class="indice" id="devinette"></p></i>
         <input placeholder="Votre reponse" type="text" id="reponse">
-        <button onclick="quiSuisJe()">Réponse</button>
+        <button class="button" onclick="quiSuisJe()">Réponse</button>
+        <button class="btn" onclick="nouvelleDevinette()">Next ➡</button>
         <p id="score">Points : 0</p>
         <p  class="p" id="resultat"></p>
+        <p id="result"></p>
         </div>
         
         
@@ -94,6 +111,7 @@
         
         <script>
             let scoreTotal =0;
+            let clickCount =0;
             let devinette = [
 {
 personnage: "Un nuage",
@@ -308,111 +326,111 @@ personnage: "Un cactus",
 indice: "Je suis une plante du désert avec des épines. Qui suis-je ?"
 },
 {
-personnage: "Un panier.",
+personnage: "Un panier",
 indice: "Je sers à transporter des objets. Qui suis-je ?"
 },
 {
-personnage: "Un pingouin.",
+personnage: "Un pingouin",
 indice: "Je suis un oiseau qui ne vole pas et qui vit dans l'Antarctique. Qui suis-je ?"
 },
 {
-personnage: "Un microscope.",
+personnage: "Un microscope",
 indice: "Je permets de voir les choses très petites. Qui suis-je ?"
 },
 {
-personnage: "Un parc d'attractions.",
+personnage: "Un parc d'attractions",
 indice: "C'est un endroit où l'on trouve des manèges et des jeux. Qui suis-je ?"
 },
 {
-personnage: "Une tornade.",
+personnage: "Une tornade",
 indice: "Je suis une colonne d'air tourbillonnante très violente. Qui suis-je ?"
 },
 {
-personnage: "Une luge.",
+personnage: "Une luge",
 indice: "Je sers à glisser sur la neige. Qui suis-je ?"
 },
 {
-personnage: "Un phare.",
+personnage: "Un phare",
 indice: "Je guide les bateaux la nuit. Qui suis-je ?"
 },
 {
-personnage: "Une orangeade.",
+personnage: "Une orangeade",
 indice: "C'est une boisson à base de jus d'orange et d'eau gazeuse. Qui suis-je ?"
 },
 {
-personnage: "Un aigle.",
+personnage: "Un aigle",
 indice: "Je suis un oiseau rapace avec une vue perçante. Qui suis-je ?"
 },
 {
-personnage: "Un télescope.",
+personnage: "Un télescope",
 indice: "Je permets d'observer les étoiles et les planètes. Qui suis-je ?"
 },
 {
-personnage: "Un zoo.",
+personnage: "Un zoo",
 indice: "On y présente des animaux du monde entier. Qui suis-je ?"
 },
 {
-personnage: "Une avalanche.",
+personnage: "Une avalanche",
 indice: "Je suis une masse de neige qui dévale une montagne. Qui suis-je ?"
 },
 {
-personnage: "Un patin à glace.",
+personnage: "Un patin à glace",
 indice: "Je permets de glisser sur la glace. Qui suis-je ?"
 },
 {
-personnage: "Un moulin à vent.",
+personnage: "Un moulin à vent",
 indice: "J'utilise le vent pour produire de l'énergie ou moudre du  grain. Qui suis-je ?"
 },
 {
-personnage: "Un chocolat chaud.",
+personnage: "Un chocolat chaud",
 indice: "Je suis une boisson réconfortante à base de cacao. Qui suis-je ?"
 },
 {
-personnage: "Un koala.",
+personnage: "Un koala",
 indice: "Je suis un mammifère marsupial qui vit en Australie et mange des feuilles d'eucalyptus. Qui suis-je ?"
 },
 {
-personnage: "Un gant de toilette.",
+personnage: "Un gant de toilette",
 indice: "Je sers à se laver le corps. Qui suis-je ?"
 },
 {
-personnage: "Un verger.",
+personnage: "Un verger",
 indice: "C'est un lieu planté d'arbres fruitiers. Qui suis-je ?"
 },
 {
-personnage: "Un arc-en-ciel.",
+personnage: "Un arc-en-ciel",
 indice: "J'apparais dans le ciel après la pluie et j'ai plusieurs couleurs. Qui suis-je ?"
 },
 {
-personnage: "Un violoncelle.",
+personnage: "Un violoncelle",
 indice: "Je suis un instrument à cordes frottées plus grand qu'un violon. Qui suis-je ?"
 },
 {
-personnage: "Une limonade.",
+personnage: "Une limonade",
 indice: "C'est une boisson rafraîchissante à base de citron. Qui suis-je ?"
 },
 {
-personnage: "Un stade.",
+personnage: "Un stade",
 indice: "Je suis un lieu où se déroulent des compétitions sportives avec des spectateurs. Qui suis-je ?"
 },
 {
-personnage: "Un canyon.",
+personnage: "Un canyon",
 indice: "Je suis une vallée profonde et étroite creusée par une rivière. Qui suis-je ?"
 },
 {
-personnage: "Un marron.",
+personnage: "Un marron",
 indice: "Je suis le fruit du châtaignier cultivé. Qui suis-je ?"
 },
 {
-personnage: "Un sac à dos.",
+personnage: "Un sac à dos",
 indice: "Je sers à transporter des affaires sur le dos. Qui suis-je ?"
 },
 {
-personnage: "Un toucan.",
+personnage: "Un toucan",
 indice: "Je suis un oiseau tropical avec un grand bec coloré. Qui suis-je ?"
 },
 {
-personnage: "Une calculatrice.",
+personnage: "Une calculatrice",
 indice: "Je sers à faire des opérations mathématiques. Qui suis-je ?"
 }
 ]
@@ -425,16 +443,23 @@ indice: "Je sers à faire des opérations mathématiques. Qui suis-je ?"
                 let indexAleatoire = Math.floor(Math.random()* devinette.length);
                 devinetteActuelle = devinette[indexAleatoire];
                   document.getElementById("devinette").innerHTML= devinetteActuelle.indice ;
+                  document.getElementById("score").innerHTML=`Points : ${scoreTotal}`
+                  scoreTotal -=20
+                clickCount = 0
+                 
                 
             }
             nouvelleDevinette();
+          
             
             function quiSuisJe() {
-         
+       
+            let result = document.getElementById("result")
             let point = document.getElementById("score")
                 let reponse = document.getElementById('reponse')
                 let resultat = document.getElementById('resultat')
                 let reponseUser = reponse.value.toLowerCase();
+                clickCount++;
                 if(reponseUser === devinetteActuelle.personnage.toLowerCase()) {
                 scoreTotal += 100
                 
@@ -442,15 +467,24 @@ indice: "Je sers à faire des opérations mathématiques. Qui suis-je ?"
                     point.textContent=`Points : ${scoreTotal}`
                     resultat.style.color= 'blue'
              nouvelleDevinette();
-                } else {
+                } 
+                else if(clickCount >= 5) {
+                    result.textContent= devinetteActuelle.personnage
+                    
+                }
+                else {
                 scoreTotal -=10
   resultat.textContent = "Faux ! essaie encore"
     resultat.style.color= "red";
-   
-    point.textContent=`Points : ${scoreTotal}`
+    point.textContent=`Points : ${scoreTotal} \n\n`  
+    
+  
+    result.style.color='#2aecff'
+    
                 }
                 reponse.value= ""
                 resultat.value=""
+                
             }
             
             
